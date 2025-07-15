@@ -132,10 +132,10 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
                 Contact
               </Link>
               <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 lg:px-6 py-2 text-sm lg:text-base rounded-full">
-                <a href="#booking" className="text-white no-underline">
-                  Free Appointment
-                </a>
-              </Button>
++                <a href="#/#booking" className="text-white no-underline">
++                  Free Appointment
++                </a>
++              </Button>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -230,10 +230,10 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
                     Contact
                   </Link>
                   <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold w-full rounded-full py-3 text-base touch-target">
-                    <a href="#booking" className="text-white no-underline">
-                      Free Appointment
-                    </a>
-                  </Button>
++                    <a href="#/#booking" className="text-white no-underline">
++                      🔥 FREE TEST
++                    </a>
++                  </Button>
                 </nav>
               </div>
             </div>
