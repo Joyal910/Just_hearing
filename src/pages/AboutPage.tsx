@@ -104,7 +104,7 @@ export function AboutPage() {
     }
   ]
 
-  
+
   return (
     <div className="min-h-screen bg-white">
       <SEOHead 
@@ -325,7 +325,7 @@ export function AboutPage() {
                         </div>
                       </div>
                       <Button className="bg-cyan-600 hover:bg-cyan-700 text-white">
-                        <a href="/#booking" className="flex items-center">
+                        <a href="/booking" className="flex items-center">
                           <Calendar className="h-4 w-4 mr-2" />
                           Book Appointment with {member.name.split(',')[0]}
                         </a>
@@ -462,15 +462,15 @@ export function AboutPage() {
               <div>
                 <div className="font-bold text-blue-900 text-base sm:text-lg mb-1">Advanced Hearing Tests</div>
                 <div className="text-gray-600 text-sm sm:text-base">Modern equipment for precise, reliable results</div>
-              </div>
-            </div>
+                        </div>
+                  </div>
             {/* Feature: Affordable, Reliable & Reachable */}
             <div className="flex items-start bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl shadow p-4 sm:p-6">
               <TrendingUp className="w-7 h-7 text-cyan-600 mr-3 mt-1 flex-shrink-0" />
               <div>
                 <div className="font-bold text-blue-900 text-base sm:text-lg mb-1">Affordable, Reliable & Reachable</div>
                 <div className="text-gray-600 text-sm sm:text-base">Care you can trust, always within your reach</div>
-              </div>
+                </div>
             </div>
           </div>
         </div>
@@ -505,7 +505,7 @@ export function AboutPage() {
             Schedule your free consultation today and take the first step towards better hearing
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/#booking">
+            <a href="#booking">
               <Button className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
                 <Calendar className="w-5 h-5 mr-2" />
                 Schedule Free Consultation

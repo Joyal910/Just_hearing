@@ -111,7 +111,7 @@ export function HeroSection() {
                       </p>
                     </div>
                     <div className="flex flex-col gap-3 sm:flex-row sm:gap-6 animate-fade-in-up">
-                      <a href="/#booking">
+                      <a href="#booking">
                         <Button 
                           size="lg" 
                           className="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 sm:px-8 lg:px-10 py-3 sm:py-6 text-sm sm:text-lg lg:text-xl rounded-full shadow-2xl transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group w-full sm:w-auto touch-target"

@@ -66,7 +66,7 @@ export function AudiologistProfile() {
                   </div>
                 </div>
                 <div className="pt-1">
-                  <a href="/#booking">
+                  <a href="#booking">
                     <Button className="bg-cyan-600 hover:bg-cyan-700 text-white transition-all duration-300 hover:scale-105 hover:-translate-y-1 group w-full sm:w-auto touch-target mobile-button text-base sm:text-lg mt-2">
                       <Calendar className="h-4 w-4 mr-2" />
                       <span className="group-hover:animate-pulse">Book Appointment with Dr Remya</span>

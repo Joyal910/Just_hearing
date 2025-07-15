@@ -158,7 +158,7 @@ export function ServicesSection() {
                   </div>
 
                   {/* Learn More Button */}
-                  <a href="/#booking" className="block">
+                  <a href="#booking" className="block">
                     <Button className="w-full bg-cyan-600 hover:bg-cyan-700 text-white transition-all duration-300 hover:scale-105 group touch-target mobile-button text-sm sm:text-base">
                       Book This Service
                       <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
@@ -181,7 +181,7 @@ export function ServicesSection() {
                 Our experienced audiologists will help you determine the best approach for your specific hearing needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mobile-flex-col mobile-gap-4">
-                <a href="/#booking">
+                <a href="#booking">
                   <Button className="bg-red-600 hover:bg-red-700 text-white px-4 sm:px-8 py-2 sm:py-3 transition-all duration-300 hover:scale-105 hover:-translate-y-1 w-full sm:w-auto touch-target mobile-button text-sm sm:text-base">
                     Book Free Consultation
                   </Button>

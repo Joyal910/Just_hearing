@@ -13,7 +13,7 @@ export default function BookAppointmentSection() {
     fullName: "",
     phone: "",
     email: "",
-    age: "",
+    age: "", 
     concerns: "",
     preferredDate: "",
     urgency: ""
@@ -95,7 +95,7 @@ ${formData.concerns}` : ''}
   }
 
   return (
-    <section id="booking-section" className="py-6 sm:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-cyan-50">
+    <section id="booking" className="py-6 sm:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-cyan-50">
       <div className="container mx-auto px-2 sm:px-4">
         {/* Section Header */}
         <div className={`text-center mb-6 sm:mb-12 transform transition-all duration-700 sm:duration-1000 ${

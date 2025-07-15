@@ -673,7 +673,7 @@ export function ServicesPage() {
                     </div>
 
                     <div className="flex flex-col gap-1">
-                      <a href="/#booking" className="w-full">
+                      <a href="#booking" className="w-full">
                         <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-2 py-1 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-xs">
                           <Calendar className="w-3 h-3 mr-1" />
                           Book Service
@@ -736,7 +736,7 @@ export function ServicesPage() {
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-4">
-                        <a href="/#booking">
+                        <a href="#booking">
                           <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
                             <Calendar className="w-4 h-4 mr-2" />
                             Book This Service
@@ -913,7 +913,7 @@ export function ServicesPage() {
             Schedule your free consultation today and take the first step towards better hearing
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/#booking">
+            <a href="#booking">
               <Button className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
                 <Calendar className="w-5 h-5 mr-2" />
                 Schedule Free Consultation

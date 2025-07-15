@@ -728,7 +728,7 @@ Thank you!`
             Schedule your free consultation today and take the first step towards better hearing
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <a href="/#booking">
+            <a href="#booking">
               <Button className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Schedule Free Consultation
