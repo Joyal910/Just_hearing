@@ -12,7 +12,7 @@ export default function App() {
   return (
     <>
       <FreeTrialModal />
-      <Router>
+      <Router basename="/Just_hearing">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
