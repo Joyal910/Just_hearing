@@ -166,12 +166,12 @@ export function ServicesSection() {
                   </div>
 
                   {/* Learn More Button */}
-                  <a href="#booking" className="block">
+                  <Link to="/?scroll=booking" className="block">
                     <Button className="w-full bg-cyan-600 hover:bg-cyan-700 text-white transition-all duration-300 hover:scale-105 group touch-target mobile-button text-sm sm:text-base shadow-lg">
                       Book This Service
                       <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
-                  </a>
+                  </Link>
                 </CardContent>
               </Card>
             )
