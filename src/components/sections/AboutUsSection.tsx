@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, Star, Award, Users, Shield, CreditCard } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import aboutusimage from "../../assets/images/aboutusimage.jpeg"
 
 const AboutUsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [counters, setCounters] = useState({ patients: 0, years: 0, rating: 0 });
+  const [counters, setCounters] = useState({ patients: 0, years: 0, brands: 0 });
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const AboutUsSection = () => {
           }
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     const element = document.getElementById('about-section');
@@ -29,7 +30,7 @@ const AboutUsSection = () => {
 
   const animateCounters = () => {
     const duration = 2000;
-    const targets = { patients: 1000, years: 17, rating: 4.9 };
+    const targets = { patients: 100000, years: 17, brands: 10 }; // 1 lakh = 100,000
     const startTime = Date.now();
     
     const updateCounters = () => {
@@ -39,7 +40,7 @@ const AboutUsSection = () => {
       setCounters({
         patients: Math.floor(targets.patients * progress),
         years: Math.floor(targets.years * progress),
-        rating: (targets.rating * progress).toFixed(1)
+        brands: Math.floor(targets.brands * progress)
       });
       
       if (progress < 1) {
@@ -50,7 +51,18 @@ const AboutUsSection = () => {
     updateCounters();
   };
 
-  const ratingValue = typeof counters.rating === 'string' ? parseFloat(counters.rating) : counters.rating;
+  // Format patients count to show as "1 Lakh"
+  const formatPatientsCount = (count) => {
+    if (count >= 100000) {
+      return "1 Lakh+";
+    } else if (count >= 10000) {
+      const lakhs = (count / 100000).toFixed(1);
+      return `${lakhs} Lakh`;
+    } else if (count >= 1000) {
+      return `${Math.floor(count / 1000)}K+`;
+    }
+    return count.toString();
+  };
 
   return (
     <div id="about-section" className="py-6 sm:py-16 px-2 sm:px-6 lg:px-8 mobile-section-spacing">
@@ -63,17 +75,11 @@ const AboutUsSection = () => {
           }`}>
             <div className="rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 group">
               <img 
-                src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?_gl=1*11cqz92*_ga*NTAwNzc5MzMuMTc1MDAwODcyMA..*_ga_8JE65Q40S6*czE3NTE3MzE2NzYkbzMkZzEkdDE3NTE3MzIzNTUkajE0JGwwJGgw" 
+                src={aboutusimage}
                 alt="Just Hearing Clinic team" 
                 className="w-full h-40 xs:h-48 sm:h-auto object-cover group-hover:scale-105 transition-transform duration-500 mobile-image"
               />
-              {/* Years of Excellence Badge */}
-              <div className="absolute bottom-2 right-2 sm:bottom-6 sm:right-6 bg-cyan-500 text-white px-2 py-1 sm:px-6 sm:py-4 rounded-lg shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
-                <div className="text-center">
-                  <div className="text-lg sm:text-3xl font-bold">{counters.years}+</div>
-                  <div className="text-xs sm:text-sm font-medium">Years of Excellence</div>
-                </div>
-              </div>
+              
             </div>
           </div>
 
@@ -164,7 +170,7 @@ const AboutUsSection = () => {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         } mobile-grid-1`}>
           <div className="text-center p-3 sm:p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform transition-transform mobile-card-spacing">
-            <div className="text-lg sm:text-4xl font-bold text-cyan-600 mb-1 sm:mb-2">{counters.patients}+</div>
+            <div className="text-lg sm:text-4xl font-bold text-cyan-600 mb-1 sm:mb-2">{formatPatientsCount(counters.patients)}</div>
             <div className="text-gray-600 text-xs sm:text-base">Patients Served</div>
           </div>
           <div className="text-center p-3 sm:p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform transition-transform mobile-card-spacing">
@@ -172,8 +178,8 @@ const AboutUsSection = () => {
             <div className="text-gray-600 text-xs sm:text-base">Years of Excellence</div>
           </div>
           <div className="text-center p-3 sm:p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform transition-transform mobile-card-spacing">
-            <div className="text-lg sm:text-4xl font-bold text-cyan-600 mb-1 sm:mb-2">{ratingValue}/5</div>
-            <div className="text-gray-600 text-xs sm:text-base">Patient Rating</div>
+            <div className="text-lg sm:text-4xl font-bold text-cyan-600 mb-1 sm:mb-2">{counters.brands}+</div>
+            <div className="text-gray-600 text-xs sm:text-base">Brand Collaborations</div>
           </div>
         </div>
         

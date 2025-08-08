@@ -6,6 +6,19 @@ import { FloatingActionButtons } from "@/components/layout/FloatingActionButtons
 import { Button } from "@/components/ui/button"
 import { ProductBookingModal } from "@/components/ProductBookingModal"
 import { Star, Search, ChevronLeft, ChevronRight, Calendar, ShoppingCart, ArrowRight, Phone, Filter, X, ChevronDown, ChevronUp } from "lucide-react"
+import Signia_Pure_Charge_Go_X from "../assets/images/Signia Pure Charge&Go X.jpeg"
+import Signia_Intuis_4_BTE from "../assets/images/Signia Intuis 4 BTE.jpeg"
+import Silk_X_CIC from "../assets/images/Silk X CIC.jpeg"
+import Signia_Motion_P_BTE from "../assets/images/Signia Motion P BTE.jpeg"
+import Phonak_Terra_RIC from "../assets/images/Phonak Terra RIC.jpeg"
+import Phonak_Terra_BTE from "../assets/images/Phonak Terra BTE.jpeg"
+import hasaton_jazz_CIC from "../assets/images/hasaton jazz CIC.jpeg"
+import Eartips_and_tubes from "../assets/images/Eartips_and_tubes.jpeg"
+import Waxguards from "../assets/images/Waxguards.jpeg"
+import Click_Sleeves from "../assets/images/Click_Sleeves.jpeg"
+import Ear_mould from "../assets/images/Ear_mould.jpeg"
+
+
 
 // SearchBar component with proper typing and memoization
 interface SearchBarProps {
@@ -52,54 +65,105 @@ export function ProductsPage() {
 
   // Hearing Aid Products
   const hearingAidProducts = [
-    {
-      id: "ha1",
-      name: "Signia Pure Charge&Go X",
-      brand: "Signia",
-      price: 2499.00,
-      image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop",
-      rating: 4.8,
-      reviewCount: 45,
-      category: "Hearing Aids",
-      type: "RIC",
-      features: ["Rechargeable", "Bluetooth", "Tinnitus Relief", "Water Resistant"]
-    },
-    {
-      id: "ha2",
-      name: "Siemens Intuis 4 BTE",
-      brand: "Siemens",
-      price: 1899.00,
-      image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop",
-      rating: 4.6,
-      reviewCount: 32,
-      category: "Hearing Aids",
-      type: "BTE",
-      features: ["Digital Processing", "Noise Reduction", "Feedback Management"]
-    },
-    {
-      id: "ha3",
-      name: "Signia Silk X CIC",
-      brand: "Signia",
-      price: 3299.00,
-      image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop",
-      rating: 4.9,
-      reviewCount: 28,
-      category: "Hearing Aids",
-      type: "CIC",
-      features: ["Invisible Fit", "Instant Fit", "Bluetooth", "Own Voice Processing"]
-    },
-    {
-      id: "ha4",
-      name: "Siemens Motion 13P ITE",
-      brand: "Siemens",
-      price: 2099.00,
-      image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop",
-      rating: 4.7,
-      reviewCount: 38,
-      category: "Hearing Aids",
-      type: "ITE",
-      features: ["Custom Fit", "Telecoil", "Volume Control", "Battery Door"]
-    }
+   {
+    id: "ha1",
+    name: "Signia Pure Charge&Go X",
+    brand: "Signia",
+    image: Signia_Pure_Charge_Go_X,
+    category: "Hearing Aids",
+    type: "RIC",
+    features: [
+      "Rechargeable lithium‑ion battery",
+      "Bluetooth streaming (calls, music, TV)",
+      "Remote control via Signia app",
+      "Tinnitus therapy options"
+    ]
+  },
+  {
+    id: "ha2",
+    name: "Signia Intuis 4 BTE",
+    brand: "Signia",
+    image: Signia_Intuis_4_BTE,
+    category: "Hearing Aids",
+    type: "BTE",
+    features: [
+      "Bluetooth streaming for iOS & Android",
+      "Built‑in telecoil",
+      "Tinnitus therapy",
+      "Directional microphones for clear speech"
+    ]
+  },
+  {
+    id: "ha3",
+    name: "Signia Silk X CIC",
+    brand: "Signia",
+    image: Silk_X_CIC,
+    category: "Hearing Aids",
+    type: "CIC",
+    features: [
+      "Instant, ready‑wear fit with silicone click sleeves",
+      "Ultra‑discreet, virtually invisible design",
+      "True‑to‑life sound via Signia Xperience platform",
+      "Direct streaming & remote control via Signia app"
+    ]
+  },
+  {
+    id: "ha4",
+    name: "Signia Motion P BTE",
+    brand: "Signia",
+    image: Signia_Motion_P_BTE,
+    category: "Hearing Aids",
+    type: "BTE",
+    features: [
+      "Custom fit",
+      "Telecoil support",
+      "Volume control",
+      "Battery door access"
+    ]
+  },
+  {
+    id: "ha5",
+    name: "Phonak Terra RIC",
+    brand: "Phonak",
+    image: Phonak_Terra_RIC,
+    category: "Hearing Aids",
+    type: "RIC",
+    features: [
+      "Speech-in-noise optimization",
+      "DuoPhone for simultaneous audio in both ears",
+      "Universal Bluetooth connectivity",
+      "myPhonak app for remote control & support"
+    ]
+  },
+  {
+    id: "ha6",
+    name: "Phonak Terra BTE",
+    brand: "Phonak",
+    image: Phonak_Terra_BTE,
+    category: "Hearing Aids",
+    type: "BTE",
+    features: [
+      "Speech-in-noise optimization",
+      "DuoPhone for live binaural streaming",
+      "Universal Bluetooth compatibility",
+      "Remote control via myPhonak app"
+    ]
+  },
+  {
+    id: "ha7",
+    name: "Hasaton Jazz CIC",
+    brand: "Hasaton",
+    image: hasaton_jazz_CIC,
+    category: "Hearing Aids",
+    type: "CIC",
+    features: [
+      "Custom fit CIC design",
+      "Telecoil access",
+      "Volume control",
+      "Battery door access"
+    ]
+  }
+
   ]
 
   // Accessories Products
@@ -109,10 +173,9 @@ export function ProductsPage() {
       id: "bat1",
       name: "Hearing Aid Battery Size 10",
       brand: "Signia",
-      price: 12.50,
+      
       image: "https://5.imimg.com/data5/SELLER/Default/2021/4/LG/AA/LO/11129334/siemens-signia-10-hearing-aid-batteries.jpg",
-      rating: 4.5,
-      reviewCount: 89,
+     
       category: "Accessories",
       subcategory: "Battery",
       size: "10 (Yellow)",
@@ -122,10 +185,9 @@ export function ProductsPage() {
       id: "bat2",
       name: "Hearing Aid Battery Size 13",
       brand: "Siemens",
-      price: 13.00,
+      
       image: "https://cdn11.bigcommerce.com/s-pem0vhg/images/stencil/1280x1280/products/91/2035/HEARING-SAVERS-Siemens-Signia-hearing-aid-batteries-size-13-clean__47908.1660090362.jpg?c=2?imbypass=on",
-      rating: 4.4,
-      reviewCount: 67,
+      
       category: "Accessories",
       subcategory: "Battery",
       size: "13 (Orange)",
@@ -135,10 +197,9 @@ export function ProductsPage() {
       id: "bat3",
       name: "Hearing Aid Battery Size 312",
       brand: "Signia",
-      price: 14.00,
+      
       image: "https://i.ebayimg.com/images/g/ZwsAAOSwms5lHSkC/s-l1200.jpg",
-      rating: 4.6,
-      reviewCount: 78,
+      
       category: "Accessories",
       subcategory: "Battery",
       size: "312 (Brown)",
@@ -148,10 +209,9 @@ export function ProductsPage() {
       id: "bat4",
       name: "Hearing Aid Battery Size 675",
       brand: "Siemens",
-      price: 15.50,
+      
       image: "https://medineeds.in/cdn/shop/products/675-1_e1058e63-ff77-4d5c-8a96-0c26573da240.jpg?v=1676011389",
-      rating: 4.7,
-      reviewCount: 56,
+      
       category: "Accessories",
       subcategory: "Battery",
       size: "675 (Blue)",
@@ -162,53 +222,24 @@ export function ProductsPage() {
       id: "tip1",
       name: "BTE Ear Tip - Small",
       brand: "Signia",
-      price: 25.00,
-      image: "https://images.unsplash.com/photo-1612825173281-9a193378527e?w=400&h=300&fit=crop",
-      rating: 4.3,
-      reviewCount: 23,
+     
+      image: Eartips_and_tubes,
+     
       category: "Accessories",
       subcategory: "Ear Tip and Tube",
-      size: "S",
+      size: "S,M,L",
       compatibility: "Compatible with BTE Hearing Aids",
       quantity: "1 Pair"
     },
-    {
-      id: "tip2",
-      name: "BTE Ear Tip - Medium",
-      brand: "Siemens",
-      price: 25.00,
-      image: "https://images.unsplash.com/photo-1612825173281-9a193378527e?w=400&h=300&fit=crop",
-      rating: 4.4,
-      reviewCount: 31,
-      category: "Accessories",
-      subcategory: "Ear Tip and Tube",
-      size: "M",
-      compatibility: "Compatible with BTE Hearing Aids",
-      quantity: "1 Pair"
-    },
-    {
-      id: "tip3",
-      name: "BTE Ear Tip - Large",
-      brand: "Signia",
-      price: 25.00,
-      image: "https://images.unsplash.com/photo-1612825173281-9a193378527e?w=400&h=300&fit=crop",
-      rating: 4.2,
-      reviewCount: 18,
-      category: "Accessories",
-      subcategory: "Ear Tip and Tube",
-      size: "L",
-      compatibility: "Compatible with BTE Hearing Aids",
-      quantity: "1 Pair"
-    },
+    
     // Waxguard/Filter System
     {
       id: "wax1",
-      name: "WG 3.0 NanoCare Filter",
+      name: "WaxGuard",
       brand: "Signia",
-      price: 18.00,
-      image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=400&h=300&fit=crop",
-      rating: 4.7,
-      reviewCount: 42,
+     
+      image: Waxguards,
+     
       category: "Accessories",
       subcategory: "Waxguard / Filter System",
       productCode: "WG 3.0",
@@ -219,72 +250,29 @@ export function ProductsPage() {
     {
       id: "sleeve1",
       name: "Click Sleeve - Vented Small",
-      brand: "Siemens",
-      price: 22.00,
-      image: "https://images.unsplash.com/photo-1612825173281-9a193378527e?w=400&h=300&fit=crop",
-      rating: 4.5,
-      reviewCount: 15,
+      brand: "Signia",
+     
+      image: Click_Sleeves,
+     
       category: "Accessories",
       subcategory: "Click Sleeves",
-      size: "S",
-      type: "Vented",
+      size: "XS,S,M,L",
+      type: "Vented ,Closed",
       quantity: "6 pcs/blister"
     },
-    {
-      id: "sleeve2",
-      name: "Click Sleeve - Closed Medium",
-      brand: "Signia",
-      price: 22.00,
-      image: "https://images.unsplash.com/photo-1612825173281-9a193378527e?w=400&h=300&fit=crop",
-      rating: 4.4,
-      reviewCount: 19,
-      category: "Accessories",
-      subcategory: "Click Sleeves",
-      size: "M",
-      type: "Closed",
-      quantity: "6 pcs/blister"
-    },
-    // Click Domes
-    {
-      id: "dome1",
-      name: "Click Dome - Open 8mm",
-      brand: "Signia",
-      price: 20.00,
-      image: "https://images.unsplash.com/photo-1612825173281-9a193378527e?w=400&h=300&fit=crop",
-      rating: 4.6,
-      reviewCount: 24,
-      category: "Accessories",
-      subcategory: "Click Domes",
-      size: "8mm",
-      type: "Open",
-      quantity: "6 pcs/blister"
-    },
-    {
-      id: "dome2",
-      name: "Click Dome - Closed 10mm",
-      brand: "Siemens",
-      price: 20.00,
-      image: "https://images.unsplash.com/photo-1612825173281-9a193378527e?w=400&h=300&fit=crop",
-      rating: 4.5,
-      reviewCount: 18,
-      category: "Accessories",
-      subcategory: "Click Domes",
-      size: "10mm",
-      type: "Closed",
-      quantity: "6 pcs/blister"
-    },
+
     // Custom Moulds
     {
       id: "mold1",
       name: "Custom Ear Mould",
       brand: "Clinic Custom",
-      price: 0, // Price upon consultation
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
-      rating: 4.9,
-      reviewCount: 35,
+     
+      image: Ear_mould,
+     
       category: "Accessories",
       subcategory: "Custom Moulds",
       isCustom: true,
+      type:"Ear mould for BTE",
       description: "Custom made from ear impression"
     }
   ]
@@ -437,31 +425,9 @@ export function ProductsPage() {
           </div>
         )}
         
-        <div className="flex items-center gap-1 sm:gap-2">
-          <div className="flex items-center">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className={`w-3 h-3 sm:w-4 sm:h-4 ${
-                  i < Math.floor(product.rating) 
-                    ? "fill-yellow-400 text-yellow-400" 
-                    : "text-gray-300"
-                }`}
-              />
-            ))}
-          </div>
-          <span className="text-xs sm:text-sm text-gray-500">
-            {product.rating} ({product.reviewCount})
-          </span>
-        </div>
+       
         
-        <div className="text-lg sm:text-xl font-bold text-gray-900">
-          {product.isCustom ? (
-            <span className="text-xs sm:text-sm text-gray-600">Price upon consultation</span>
-          ) : (
-            `$${product.price.toFixed(2)}`
-          )}
-        </div>
+       
         
         <div className="flex gap-2 pt-2">
           {product.isCustom ? (
@@ -830,47 +796,7 @@ export function ProductsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 sm:py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600 relative overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-white/20 rounded-full animate-pulse"
-              style={{
-                left: `${10 + i * 12}%`,
-                top: `${20 + (i % 4) * 20}%`,
-                animationDelay: `${i * 0.8}s`,
-                animationDuration: `${2 + i * 0.3}s`
-              }}
-            />
-          ))}
-        </div>
-        
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex flex-col sm:flex-row items-center justify-center mb-6 gap-4 sm:gap-0">
-            <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center sm:mr-4">
-              <ArrowRight className="w-6 h-6 text-white" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">Ready to Improve Your Hearing?</h2>
-          </div>
-          <p className="text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-            Schedule your free consultation today and take the first step towards better hearing
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-            <Button className="bg-gradient-to-r from-[#182945] to-[#182945]/80 hover:from-[#182945]/90 hover:to-[#182945] text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group w-full sm:w-auto">
-              <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              Schedule Free Consultation
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
-            <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#182945] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm bg-white/10 w-full sm:w-auto">
-              <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              Call +91-9876543210
-            </Button>
-          </div>
-        </div>
-      </section>
+     
 
       <Footer />
       <FloatingActionButtons />

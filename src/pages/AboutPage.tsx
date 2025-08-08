@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import { SEOHead } from "@/components/seo/SEOHead"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { FloatingActionButtons } from "@/components/layout/FloatingActionButtons"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Heart, Star, Award, Users, Clock, MapPin, CheckCircle, Target, Eye, Lightbulb, TrendingUp, Shield, Globe, Sparkles, Zap, ArrowRight, Phone, Calendar, CreditCard as CreditCardIcon } from "lucide-react"
+import { Heart, Star, Award, Users, Clock, MapPin, CheckCircle, Target, Eye, Lightbulb, TrendingUp, Shield, Globe, Sparkles, Zap, ArrowRight, Phone, Calendar, CreditCard as CreditCardIcon, BriefcaseIcon ,HomeIcon,RepeatIcon } from "lucide-react"
 
 export function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -104,6 +105,55 @@ export function AboutPage() {
     }
   ]
 
+  const features = [
+  {
+    icon: Shield,
+    title: "Quality Assurance",
+    description: "Highest standards in every service and product we deliver"
+  },
+  {
+    icon: Award,
+    title: "Certified Audiologist",
+    description: "RCI-certified professionals with extensive experience"
+  },
+  {
+    icon: Clock,
+    title: "Years of Experience",
+    description: "Serving the community since 2008 with 15+ years of dedicated care"
+  },
+  {
+    icon: CheckCircle,
+    title: "Advanced Hearing Tests",
+    description: "State-of-the-art equipment ensuring precise and reliable results"
+  },
+  {
+    icon: Globe,
+    title: "All Brands & Models",
+    description: "Comprehensive range of hearing aids from leading manufacturers"
+  },
+  {
+    icon: CreditCardIcon,
+    title: "EMI Options",
+    description: "Flexible payment plans designed for your financial convenience"
+  },
+  {
+    icon: RepeatIcon, // Use an appropriate icon for exchange
+    title: "Exchange Offers",
+    description: "Upgrade your old hearing aids to the latest models with ease"
+  },
+  {
+    icon: HomeIcon, // Use an appropriate icon for home visits
+    title: "Home Visits",
+    description: "Professional audiology services at the comfort of your home"
+  },
+  {
+    icon: BriefcaseIcon, // Use an appropriate icon for industrial services
+    title: "Industrial Hearing Standards",
+    description: "Hearing assessments aligned with workplace safety compliance"
+  }
+]
+
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -189,14 +239,7 @@ export function AboutPage() {
                 alt="Just Hearing Clinic team" 
                 className="rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 relative z-10 w-full max-h-48 sm:max-h-none object-cover"
               />
-              <div className="absolute -bottom-3 sm:-bottom-6 -right-3 sm:-right-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white p-3 sm:p-6 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 z-20">
-                <div className="text-center">
-                  <div className="text-xl sm:text-3xl font-bold flex items-center">
-                    15+ <Zap className="w-4 h-4 sm:w-6 sm:h-6 ml-2 animate-pulse" />
-                  </div>
-                  <div className="text-xs sm:text-sm font-medium">Years of Excellence</div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -280,9 +323,9 @@ export function AboutPage() {
           <div className={`text-center mb-16 transform transition-all duration-1000 ${
             visibleSections.has('team') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <h2 className="text-4xl font-bold text-blue-900 mb-4">Meet Our Expert Team</h2>
+            <h2 className="text-4xl font-bold text-blue-900 mb-4">Meet Kottayam's Leading Expert Audiologist</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our RCI-certified audiologists bring decades of combined experience and a passion for hearing care
+              Our RCI-certified audiologist bring decades of combined experience and a passion for hearing care
             </p>
           </div>
 
@@ -324,12 +367,14 @@ export function AboutPage() {
                           </p>
                         </div>
                       </div>
+                      <Link to="/?scroll=booking">
                       <Button className="bg-cyan-600 hover:bg-cyan-700 text-white">
-                        <a href="/booking" className="flex items-center">
+                         
                           <Calendar className="h-4 w-4 mr-2" />
                           Book Appointment with {member.name.split(',')[0]}
-                        </a>
+                        
                       </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -339,188 +384,65 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Achievements */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600 relative overflow-hidden" data-animate id="achievements">
-        <div className="absolute inset-0">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-white/20 rounded-full animate-pulse"
-              style={{
-                left: `${10 + i * 12}%`,
-                top: `${20 + (i % 4) * 20}%`,
-                animationDelay: `${i * 0.8}s`,
-                animationDuration: `${2 + i * 0.3}s`
-              }}
-            />
-          ))}
+      
+    
+     {/* Why Choose Just Hearing Section */}
+      <section className="py-16 lg:py-24 relative overflow-hidden" style={{ backgroundColor: '#01174a' }}>
+        {/* Subtle red accent patterns */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 right-10 w-32 h-32 rounded-full" style={{ backgroundColor: '#ff0226' }}></div>
+          <div className="absolute bottom-20 left-16 w-20 h-20 rounded-full" style={{ backgroundColor: '#ff0226' }}></div>
+          <div className="absolute top-1/2 left-1/4 w-6 h-6 rounded-full" style={{ backgroundColor: '#ff0226' }}></div>
         </div>
         
-        <div className="container mx-auto px-4">
-          <div className={`text-center mb-16 transform transition-all duration-1000 ${
-            visibleSections.has('achievements') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <h2 className="text-4xl font-bold text-white mb-4">Our Achievements</h2>
-            <p className="text-xl text-blue-100">Numbers that reflect our commitment to excellence</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Why Choose Just Hearing
+            </h2>
+            <div className="w-24 h-1 mx-auto mb-6" style={{ background: 'linear-gradient(90deg, #ff0226 0%, #00bcd4 100%)' }}></div>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Discover what sets us apart and why families across the region trust us 
+              for their comprehensive hearing care needs
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className={`text-center transform transition-all duration-1000 hover:scale-110 ${
-              visibleSections.has('achievements') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-            }`} style={{ animationDelay: '100ms' }}>
-              <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-white/30 transition-all duration-300 shadow-lg">
-                <Users className="w-10 h-10 text-white" />
-              </div>
-              <div className="text-4xl font-bold text-white mb-2">{counters.patients}+</div>
-              <div className="text-blue-100">Patients Served</div>
-            </div>
-            
-            <div className={`text-center transform transition-all duration-1000 hover:scale-110 ${
-              visibleSections.has('achievements') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-            }`} style={{ animationDelay: '200ms' }}>
-              <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-white/30 transition-all duration-300 shadow-lg">
-                <Clock className="w-10 h-10 text-white" />
-              </div>
-              <div className="text-4xl font-bold text-white mb-2">{counters.years}+</div>
-              <div className="text-blue-100">Years Experience</div>
-            </div>
-            
-            <div className={`text-center transform transition-all duration-1000 hover:scale-110 ${
-              visibleSections.has('achievements') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-            }`} style={{ animationDelay: '300ms' }}>
-              <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-white/30 transition-all duration-300 shadow-lg">
-                <TrendingUp className="w-10 h-10 text-white" />
-              </div>
-              <div className="text-4xl font-bold text-white mb-2">{counters.success}%</div>
-              <div className="text-blue-100">Success Rate</div>
-            </div>
-            
-            <div className={`text-center transform transition-all duration-1000 hover:scale-110 ${
-              visibleSections.has('achievements') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-            }`} style={{ animationDelay: '400ms' }}>
-              <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-white/30 transition-all duration-300 shadow-lg">
-                <Heart className="w-10 h-10 text-white" />
-              </div>
-              <div className="text-4xl font-bold text-white mb-2">{counters.rating}/5</div>
-              <div className="text-blue-100">Patient Rating</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Just Hearing Section */}
-      <section className="py-10 sm:py-16 bg-white relative overflow-hidden" data-animate id="why-just-hearing">
-        <div className="container mx-auto px-2 sm:px-4">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-4xl font-bold text-blue-900 mb-2 sm:mb-4">Why Just Hearing</h2>
-            <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">Discover what sets us apart and why families trust us for their hearing care</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
-            {/* Feature: Quality Assurance */}
-            <div className="flex items-start bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl shadow p-4 sm:p-6">
-              <Shield className="w-7 h-7 text-cyan-600 mr-3 mt-1 flex-shrink-0" />
-              <div>
-                <div className="font-bold text-blue-900 text-base sm:text-lg mb-1">Quality Assurance</div>
-                <div className="text-gray-600 text-sm sm:text-base">Highest standards in every service and product</div>
-              </div>
-            </div>
-            {/* Feature: Certified Audiologist */}
-            <div className="flex items-start bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl shadow p-4 sm:p-6">
-              <Award className="w-7 h-7 text-cyan-600 mr-3 mt-1 flex-shrink-0" />
-              <div>
-                <div className="font-bold text-blue-900 text-base sm:text-lg mb-1">Certified Audiologist</div>
-                <div className="text-gray-600 text-sm sm:text-base">RCI-certified, experienced professionals</div>
-              </div>
-            </div>
-            {/* Feature: Years of Experience */}
-            <div className="flex items-start bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl shadow p-4 sm:p-6">
-              <Clock className="w-7 h-7 text-cyan-600 mr-3 mt-1 flex-shrink-0" />
-              <div>
-                <div className="font-bold text-blue-900 text-base sm:text-lg mb-1">Years of Experience</div>
-                <div className="text-gray-600 text-sm sm:text-base">Serving since 2008 with 15+ years of care</div>
-              </div>
-            </div>
-            {/* Feature: EMI Option */}
-            <div className="flex items-start bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl shadow p-4 sm:p-6">
-              <CreditCardIcon className="w-7 h-7 text-cyan-600 mr-3 mt-1 flex-shrink-0" />
-              <div>
-                <div className="font-bold text-blue-900 text-base sm:text-lg mb-1">EMI Option</div>
-                <div className="text-gray-600 text-sm sm:text-base">Flexible payment plans for your convenience</div>
-              </div>
-            </div>
-            {/* Feature: Hearing Aids of all brands & Models */}
-            <div className="flex items-start bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl shadow p-4 sm:p-6">
-              <Globe className="w-7 h-7 text-cyan-600 mr-3 mt-1 flex-shrink-0" />
-              <div>
-                <div className="font-bold text-blue-900 text-base sm:text-lg mb-1">All Brands & Models</div>
-                <div className="text-gray-600 text-sm sm:text-base">Wide range of hearing aids to suit every need</div>
-              </div>
-            </div>
-            {/* Feature: Advanced Hearing tests with accurate results */}
-            <div className="flex items-start bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl shadow p-4 sm:p-6">
-              <CheckCircle className="w-7 h-7 text-cyan-600 mr-3 mt-1 flex-shrink-0" />
-              <div>
-                <div className="font-bold text-blue-900 text-base sm:text-lg mb-1">Advanced Hearing Tests</div>
-                <div className="text-gray-600 text-sm sm:text-base">Modern equipment for precise, reliable results</div>
-                        </div>
+          
+           {/* Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <div 
+                  key={index}
+                  className="bg-white/10 backdrop-blur-sm rounded-lg shadow-lg border border-white/20 p-8 hover:bg-white/15 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 bg-cyan-400/20 rounded-lg flex items-center justify-center border border-cyan-400/30">
+                        <IconComponent className="w-6 h-6 text-cyan-400" />
+                      </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg font-semibold text-white mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
-            {/* Feature: Affordable, Reliable & Reachable */}
-            <div className="flex items-start bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl shadow p-4 sm:p-6">
-              <TrendingUp className="w-7 h-7 text-cyan-600 mr-3 mt-1 flex-shrink-0" />
-              <div>
-                <div className="font-bold text-blue-900 text-base sm:text-lg mb-1">Affordable, Reliable & Reachable</div>
-                <div className="text-gray-600 text-sm sm:text-base">Care you can trust, always within your reach</div>
                 </div>
-            </div>
+              );
+            })}
           </div>
+         
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600 relative overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-white/20 rounded-full animate-pulse"
-              style={{
-                left: `${10 + i * 12}%`,
-                top: `${20 + (i % 4) * 20}%`,
-                animationDelay: `${i * 0.8}s`,
-                animationDuration: `${2 + i * 0.3}s`
-              }}
-            />
-          ))}
-        </div>
-        
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center mb-6">
-            <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mr-4">
-              <ArrowRight className="w-6 h-6 text-white" />
-            </div>
-            <h2 className="text-4xl font-bold text-white">Ready to Improve Your Hearing?</h2>
-          </div>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Schedule your free consultation today and take the first step towards better hearing
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#booking">
-              <Button className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
-                <Calendar className="w-5 h-5 mr-2" />
-                Schedule Free Consultation
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-              </Button>
-            </a>
-            <a href="tel:+918590310265">
-              <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm bg-white/10">
-                <Phone className="w-5 h-5 mr-2" />
-                Call +91-8590310265
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
+
+     
 
       <Footer />
       <FloatingActionButtons />

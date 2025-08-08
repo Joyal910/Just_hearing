@@ -4,60 +4,58 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Star, ShoppingCart, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ProductBookingModal } from '../ProductBookingModal';
+import Signia_Pure_Charge_Go_X from "../../assets/images/Signia Pure Charge&Go X.jpeg"
+import Signia_Motion_P_BTE from "../../assets/images/Signia Motion P BTE.jpeg"
+import Phonak_Terra_BTE from "../../assets/images/Phonak Terra BTE.jpeg"
+import hasaton_jazz_CIC from "../../assets/images/hasaton jazz CIC.jpeg"
+
 
 // Updated products data - exactly 2 hearing aids, 1 battery, 1 ear tip
 const featuredProducts = [
+   {
+      id: "ha1",
+      name: "Signia Pure Charge&Go X",
+      brand: "Signia",
+      
+      image: Signia_Pure_Charge_Go_X,
+     
+      
+      category: "Hearing Aids",
+      type: "RIC",
+      features: ["Rechargeable", "Bluetooth", "Tinnitus Relief", "Water Resistant"]
+    },
   {
-    id: "ha1",
-    name: "Signia Pure Charge&Go X",
-    brand: "Signia",
-    price: 2499.00,
-    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop",
-    rating: 4.8,
-    reviewCount: 45,
-    category: "Hearing Aids",
-    type: "RIC",
-    features: ["Rechargeable", "Bluetooth", "Tinnitus Relief", "Water Resistant"]
-  },
+      id: "ha2",
+      name: "Phonak Terra BTE",
+      brand: "Phonak",
+      
+      image: Phonak_Terra_BTE,
+      
+      category: "Hearing Aids",
+      type: "BTE",
+      features: ["Custom Fit", "Telecoil", "Volume Control", "Battery Door"]
+    },
   {
-    id: "ha2",
-    name: "Siemens Intuis 4 BTE",
-    brand: "Siemens",
-    price: 1899.00,
-    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop",
-    rating: 4.6,
-    reviewCount: 32,
-    category: "Hearing Aids",
-    type: "BTE",
-    features: ["Digital Processing", "Noise Reduction", "Feedback Management"]
-  },
+      id: "ha3",
+      name: "Signia Motion P BTE",
+      brand: "Signia",
+     
+      image: Signia_Motion_P_BTE,
+     
+      category: "Hearing Aids",
+      type: "BTE",
+      features: ["Custom Fit", "Telecoil", "Volume Control", "Battery Door"]
+    },
   {
-    id: "bat1",
-    name: "Hearing Aid Battery Size 312",
-    brand: "Signia",
-    price: 14.00,
-    image: "https://i.ebayimg.com/images/g/ZwsAAOSwms5lHSkC/s-l1200.jpg",
-    rating: 4.6,
-    reviewCount: 78,
-    category: "Accessories",
-    subcategory: "Battery",
-    size: "312 (Brown)",
-    quantity: "8 pcs"
-  },
-  {
-    id: "tip1",
-    name: "BTE Ear Tip - Medium",
-    brand: "Siemens",
-    price: 25.00,
-    image: "https://images.unsplash.com/photo-1612825173281-9a193378527e?w=400&h=300&fit=crop",
-    rating: 4.4,
-    reviewCount: 31,
-    category: "Accessories",
-    subcategory: "Ear Tip and Tube",
-    size: "M",
-    compatibility: "Compatible with BTE Hearing Aids",
-    quantity: "1 Pair"
-  }
+      id: "ha4",
+      name: "Hasaton Jazz CIC",
+      brand: "Hasaton",
+      
+      image: hasaton_jazz_CIC,
+      category: "Hearing Aids",
+      type: "CIC",
+      features: ["Custom Fit", "Telecoil", "Volume Control", "Battery Door"]
+    }
 ];
 
 export function ProductsSection() {
@@ -157,27 +155,9 @@ export function ProductsSection() {
                   </div>
                 )}
                 
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-4 h-4 transition-colors duration-200 ${
-                          i < Math.floor(product.rating) 
-                            ? "fill-yellow-400 text-yellow-400" 
-                            : "text-gray-300"
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <span className="text-xs sm:text-sm text-gray-500">
-                    {product.rating} ({product.reviewCount} Reviews)
-                  </span>
-                </div>
+               
                 
-                <div className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-cyan-600 transition-colors duration-300">
-                  ${product.price.toFixed(2)}
-                </div>
+                
                 
                 <div className="flex gap-2 pt-1 sm:pt-2">
                   {product.category === "Hearing Aids" ? (
@@ -186,7 +166,7 @@ export function ProductsSection() {
                       onClick={() => { setSelectedProduct(product); setModalOpen(true); }}
                     >
                       <Calendar className="w-4 h-4" />
-                      <span className="group-hover:animate-pulse">Book Now</span>
+                      <span className="group-hover:animate-pulse">Enquire here</span>
                     </button>
                   ) : (
                     <button
@@ -194,7 +174,7 @@ export function ProductsSection() {
                       onClick={() => { setSelectedProduct(product); setModalOpen(true); }}
                     >
                       <ShoppingCart className="w-4 h-4" />
-                      <span className="group-hover:animate-pulse">Buy Now</span>
+                      <span className="group-hover:animate-pulse">Enquire here</span>
                     </button>
                   )}
                 </div>
@@ -211,7 +191,7 @@ export function ProductsSection() {
               <Link to="/products">
                 <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold px-6 sm:px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 group w-full sm:w-auto touch-target mobile-button">
                   <ShoppingCart className="w-5 h-5 mr-2" />
-                  View All Products
+                  We got more!!!
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </Link>

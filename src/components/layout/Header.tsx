@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { Button } from "@/components/ui/button"
-import { Phone, Award, Clock, MapPin, Menu, X, Ear } from "lucide-react"
+import { Phone, Award, Clock, MapPin, Menu, X, Ear, Instagram, Youtube } from "lucide-react"
 import logo from "../../assets/faivon/logo.png"
 
 interface HeaderProps {
@@ -16,7 +16,7 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
   return (
     <>
       {/* Utility Bar */}
-      <div className="text-white py-2 text-xs sm:text-sm" style={{ backgroundColor: '#1a6ca7' }}>
+      <div className="text-white py-2 text-xs sm:text-sm" style={{ backgroundColor: '#01174a' }}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             {/* Location */}
@@ -26,7 +26,7 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
               <span className="sm:hidden">Kottayam, Kerala</span>
             </div>
 
-            {/* Working Hours & Phone */}
+            {/* Working Hours, Phone & Social Media */}
             <div className="hidden lg:flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Clock className="h-4 w-4 text-cyan-400" />
@@ -36,12 +36,56 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
                 <Phone className="h-4 w-4 text-cyan-400" />
                 <span>+91-8590310265</span>
               </div>
+              {/* Social Media Icons */}
+              <div className="flex items-center space-x-3">
+                <a 
+                  href="https://www.instagram.com/justhearing.info?igsh=ZTlmY256MHhzNmNt" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:text-white transition-colors"
+                  aria-label="Follow us on Instagram"
+                >
+                  <Instagram className="h-4 w-4" />
+                </a>
+                <a 
+                  href="https://www.youtube.com/@justhearing" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:text-white transition-colors"
+                  aria-label="Subscribe to our YouTube channel"
+                >
+                  <Youtube className="h-4 w-4" />
+                </a>
+              </div>
             </div>
 
-            {/* Mobile & Tablet - Phone only */}
-            <div className="lg:hidden flex items-center space-x-1 sm:space-x-2">
-              <Phone className="h-4 w-4 text-cyan-400" />
-              <span className="text-xs sm:text-sm">+91-8590310265</span>
+            {/* Mobile & Tablet - Phone and Social Icons */}
+            <div className="lg:hidden flex items-center space-x-3">
+              <div className="flex items-center space-x-1 sm:space-x-2">
+                <Phone className="h-4 w-4 text-cyan-400" />
+                <span className="text-xs sm:text-sm">+91-8590310265</span>
+              </div>
+              {/* Mobile Social Media Icons */}
+              <div className="flex items-center space-x-2">
+                <a 
+                  href="https://www.instagram.com/your_instagram_profile" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:text-white transition-colors"
+                  aria-label="Follow us on Instagram"
+                >
+                  <Instagram className="h-4 w-4" />
+                </a>
+                <a 
+                  href="https://www.youtube.com/your_youtube_channel" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:text-white transition-colors"
+                  aria-label="Subscribe to our YouTube channel"
+                >
+                  <Youtube className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -132,10 +176,8 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
                 Contact
               </Link>
               <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 lg:px-6 py-2 text-sm lg:text-base rounded-full">
-+                <a href="#/#booking" className="text-white no-underline">
-+                  Free Appointment
-+                </a>
-+              </Button>
+                <Link to="/?scroll=booking">Free Appointment</Link>     
+              </Button>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -158,6 +200,30 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
                     <div className="flex items-center space-x-2">
                       <MapPin className="h-4 w-4 text-cyan-600" />
                       <span>Puthupally, Kottayam</span>
+                    </div>
+                    {/* Mobile Menu Social Icons */}
+                    <div className="flex items-center space-x-4 pt-2">
+                      <span className="text-xs text-gray-500">Follow us:</span>
+                      <div className="flex space-x-3">
+                        <a 
+                          href="https://www.instagram.com/your_instagram_profile" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-cyan-600 hover:text-cyan-700 transition-colors"
+                          aria-label="Follow us on Instagram"
+                        >
+                          <Instagram className="h-4 w-4" />
+                        </a>
+                        <a 
+                          href="https://www.youtube.com/your_youtube_channel" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-cyan-600 hover:text-cyan-700 transition-colors"
+                          aria-label="Subscribe to our YouTube channel"
+                        >
+                          <Youtube className="h-4 w-4" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -230,10 +296,8 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
                     Contact
                   </Link>
                   <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold w-full rounded-full py-3 text-base touch-target">
-+                    <a href="#/#booking" className="text-white no-underline">
-+                      🔥 FREE TEST
-+                    </a>
-+                  </Button>
+                    <Link to="/?scroll=booking">Free Appointment</Link> 
+                  </Button>
                 </nav>
               </div>
             </div>

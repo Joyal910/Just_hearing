@@ -3,13 +3,12 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Calendar, Package, User, MapPin, Phone, Mail, ShoppingCart, CheckCircle, AlertTriangle } from "lucide-react"
+import { Calendar, Package, User, MapPin, Phone, Mail, ShoppingCart, CheckCircle, AlertTriangle, Ruler } from "lucide-react"
 
 interface Product {
   id: string
   name: string
   brand: string
-  price: number
   image: string
   category: string
   type?: string
@@ -38,20 +37,62 @@ export function ProductBookingModal({ isOpen, onClose, product }: ProductBooking
     pincode: "",
     quantity: "1",
     preferredDate: "",
-    timeSlot: "",
     specialRequests: "",
-    urgency: "Normal"
+    urgency: "Normal",
+    selectedSize: ""
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
 
-  const timeSlots = [
-    "9:00 AM - 10:00 AM",
-    "10:00 AM - 11:00 AM", 
-    "11:00 AM - 12:00 PM",
-    "2:00 PM - 3:00 PM",
-    "3:00 PM - 4:00 PM",
-    "4:00 PM - 5:00 PM"
-  ]
+  // Check if the product requires size selection
+  const requiresSizeSelection = () => {
+    if (!product) return false
+    
+    const accessoryProducts = ["tip1", "wax1", "sleeve1"]
+    const accessoryNames = [
+      "BTE Ear Tip - Small",
+      "WaxGuard", 
+      "Click Sleeve - Vented Small"
+    ]
+    
+    return accessoryProducts.includes(product.id) || 
+           accessoryNames.some(name => product.name.includes(name)) ||
+           (product.subcategory && [
+             "Ear Tip and Tube",
+             "Waxguard / Filter System", 
+             "Click Sleeves"
+           ].includes(product.subcategory))
+  }
+
+  // Get available sizes for the product
+  const getAvailableSizes = () => {
+    if (!product || !requiresSizeSelection()) return []
+    
+    // If product has size field, parse it
+    if (product.size) {
+      return product.size.split(',').map(s => s.trim())
+    }
+    
+    // Default sizes based on product type
+    if (product.id === "wax1" || product.name.includes("WaxGuard")) {
+      return ["Standard"] // WaxGuards typically don't have size variations
+    }
+    
+    return ["XS", "S", "M", "L"] // Default for ear tips and sleeves
+  }
+
+  // Get available types for Click Sleeves
+  const getAvailableTypes = () => {
+    if (!product) return []
+    
+    if (product.id === "sleeve1" || product.name.includes("Click Sleeve")) {
+      if (product.type) {
+        return product.type.split(',').map(t => t.trim())
+      }
+      return ["Vented", "Closed"]
+    }
+    
+    return []
+  }
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
@@ -69,7 +110,11 @@ export function ProductBookingModal({ isOpen, onClose, product }: ProductBooking
     if (!formData.city.trim()) newErrors.city = "City is required"
     if (!formData.pincode.trim()) newErrors.pincode = "Pincode is required"
     if (!formData.preferredDate) newErrors.preferredDate = "Preferred date is required"
-    if (!formData.timeSlot) newErrors.timeSlot = "Time slot is required"
+    
+    // Validate size selection for accessories
+    if (requiresSizeSelection() && !formData.selectedSize) {
+      newErrors.selectedSize = "Please select a size"
+    }
     
     if (formData.phone && !/^[+]?[\d\s-()]{10,}$/.test(formData.phone)) {
       newErrors.phone = "Please enter a valid phone number"
@@ -88,7 +133,6 @@ export function ProductBookingModal({ isOpen, onClose, product }: ProductBooking
   }
 
   const formatWhatsAppMessage = (product: Product, formData: any) => {
-    const totalPrice = product.price * parseInt(formData.quantity)
     const currentDate = new Date().toLocaleString('en-IN', {
       timeZone: 'Asia/Kolkata',
       day: '2-digit',
@@ -103,10 +147,8 @@ export function ProductBookingModal({ isOpen, onClose, product }: ProductBooking
 📦 *PRODUCT DETAILS*
 • Product: ${product.name}
 • Brand: ${product.brand}
-• Category: ${product.category}${product.type ? `\n• Type: ${product.type}` : ''}${product.size ? `\n• Size: ${product.size}` : ''}
-• Unit Price: ₹${product.price.toFixed(2)}
+• Category: ${product.category}${product.type ? `\n• Type: ${product.type}` : ''}${product.size ? `\n• Available Sizes: ${product.size}` : ''}${formData.selectedSize ? `\n• Selected Size: ${formData.selectedSize}` : ''}
 • Quantity: ${formData.quantity}
-• *Total: ₹${totalPrice.toFixed(2)}*
 
 👤 *CUSTOMER DETAILS*
 • Name: ${formData.fullName}
@@ -119,7 +161,6 @@ export function ProductBookingModal({ isOpen, onClose, product }: ProductBooking
 
 📅 *PREFERRED SCHEDULE*
 • Date: ${formData.preferredDate}
-• Time: ${formData.timeSlot}
 • Urgency: ${formData.urgency}${formData.specialRequests ? `\n\n💬 *SPECIAL REQUESTS*\n${formData.specialRequests}` : ''}
 
 ⏰ *Booked on:* ${currentDate}
@@ -183,9 +224,9 @@ Thank you! 🎧`
           pincode: "",
           quantity: "1",
           preferredDate: "",
-          timeSlot: "",
           specialRequests: "",
-          urgency: "Normal"
+          urgency: "Normal",
+          selectedSize: ""
         })
         onClose()
       }, 3000)
@@ -213,6 +254,10 @@ Thank you! 🎧`
   }
 
   if (!product) return null
+
+  const availableSizes = getAvailableSizes()
+  const availableTypes = getAvailableTypes()
+  const showSizeSelection = requiresSizeSelection()
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -275,7 +320,12 @@ Thank you! 🎧`
                 <div className="flex-1">
                   <h4 className="font-semibold text-gray-900">{product.name}</h4>
                   <p className="text-sm text-gray-600">{product.brand} • {product.category}</p>
-                  <p className="text-lg font-bold text-blue-600">₹{product.price.toFixed(2)}</p>
+                  {product.subcategory && (
+                    <p className="text-xs text-gray-500">{product.subcategory}</p>
+                  )}
+                  {showSizeSelection && product.size && (
+                    <p className="text-xs text-blue-600">Available sizes: {product.size}</p>
+                  )}
                 </div>
               </div>
             </div>
@@ -432,48 +482,75 @@ Thank you! 🎧`
                 </div>
               </div>
 
-              {/* Preferred Schedule */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Size Selection for Accessories */}
+              {showSizeSelection && (
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    <Calendar className="w-4 h-4 inline mr-1" />
-                    Preferred Date *
-                  </label>
-                  <Input
-                    type="date"
-                    value={formData.preferredDate}
-                    onChange={(e) => handleInputChange("preferredDate", e.target.value)}
-                    min={new Date().toISOString().split('T')[0]}
-                    className={errors.preferredDate ? 'border-red-500' : ''}
-                  />
-                  {errors.preferredDate && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                      <AlertTriangle className="w-4 h-4" />
-                      {errors.preferredDate}
-                    </p>
-                  )}
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Preferred Time *
+                    <Ruler className="w-4 h-4 inline mr-1" />
+                    Size Selection *
                   </label>
                   <select
-                    className={`w-full p-3 border rounded-md ${errors.timeSlot ? 'border-red-500' : 'border-gray-300'}`}
-                    value={formData.timeSlot}
-                    onChange={(e) => handleInputChange("timeSlot", e.target.value)}
+                    className={`w-full p-3 border rounded-md ${errors.selectedSize ? 'border-red-500' : 'border-gray-300'}`}
+                    value={formData.selectedSize}
+                    onChange={(e) => handleInputChange("selectedSize", e.target.value)}
                   >
-                    <option value="">Select time slot...</option>
-                    {timeSlots.map((slot, index) => (
-                      <option key={index} value={slot}>{slot}</option>
+                    <option value="">Select a size</option>
+                    {availableSizes.map(size => (
+                      <option key={size} value={size}>{size}</option>
                     ))}
                   </select>
-                  {errors.timeSlot && (
+                  {errors.selectedSize && (
                     <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
                       <AlertTriangle className="w-4 h-4" />
-                      {errors.timeSlot}
+                      {errors.selectedSize}
+                    </p>
+                  )}
+                  {product.compatibility && (
+                    <p className="mt-1 text-xs text-gray-600">
+                      💡 {product.compatibility}
                     </p>
                   )}
                 </div>
+              )}
+
+              {/* Type Selection for Click Sleeves */}
+              {availableTypes.length > 0 && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Type Selection
+                  </label>
+                  <select
+                    className="w-full p-3 border border-gray-300 rounded-md"
+                    value={formData.selectedType || ""}
+                    onChange={(e) => handleInputChange("selectedType", e.target.value)}
+                  >
+                    <option value="">Select type (optional)</option>
+                    {availableTypes.map(type => (
+                      <option key={type} value={type}>{type}</option>
+                    ))}
+                  </select>
+                </div>
+              )}
+
+              {/* Preferred Date */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <Calendar className="w-4 h-4 inline mr-1" />
+                  Preferred Date *
+                </label>
+                <Input
+                  type="date"
+                  value={formData.preferredDate}
+                  onChange={(e) => handleInputChange("preferredDate", e.target.value)}
+                  min={new Date().toISOString().split('T')[0]}
+                  className={errors.preferredDate ? 'border-red-500' : ''}
+                />
+                {errors.preferredDate && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertTriangle className="w-4 h-4" />
+                    {errors.preferredDate}
+                  </p>
+                )}
               </div>
 
               {/* Special Requests */}
@@ -487,19 +564,6 @@ Thank you! 🎧`
                   value={formData.specialRequests}
                   onChange={(e) => handleInputChange("specialRequests", e.target.value)}
                 />
-              </div>
-
-              {/* Total Price Display */}
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-gray-900">Total Amount:</span>
-                  <span className="text-2xl font-bold text-blue-600">
-                    ₹{(product.price * parseInt(formData.quantity)).toFixed(2)}
-                  </span>
-                </div>
-                <p className="text-sm text-gray-600 mt-1">
-                  {formData.quantity} × ₹{product.price.toFixed(2)} each
-                </p>
               </div>
 
               {/* Submit Button */}
@@ -543,63 +607,112 @@ Thank you! 🎧`
   )
 }
 
-// Demo component to test the modal
+// Demo component to test the modal with different product types
 export default function Demo() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedProduct, setSelectedProduct] = useState(null)
   
-  const sampleProduct = {
-    id: "1",
-    name: "Premium Hearing Aid",
-    brand: "AudioTech",
-    price: 29999,
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=150&h=150&fit=crop&crop=center",
-    category: "Hearing Aids",
-    type: "Digital",
-    size: "Medium"
+  const sampleProducts = [
+    {
+      id: "tip1",
+      name: "BTE Ear Tip - Small",
+      brand: "Signia",
+      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=150&h=150&fit=crop&crop=center",
+      category: "Accessories",
+      subcategory: "Ear Tip and Tube",
+      size: "S,M,L",
+      compatibility: "Compatible with BTE Hearing Aids",
+      quantity: "1 Pair"
+    },
+    {
+      id: "wax1",
+      name: "WaxGuard",
+      brand: "Signia",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=150&h=150&fit=crop&crop=center",
+      category: "Accessories",
+      subcategory: "Waxguard / Filter System",
+      productCode: "WG 3.0",
+      quantity: "8 filters",
+      compatibility: "Universal compatibility"
+    },
+    {
+      id: "sleeve1",
+      name: "Click Sleeve - Vented Small",
+      brand: "Signia",
+      image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=150&h=150&fit=crop&crop=center",
+      category: "Accessories",
+      subcategory: "Click Sleeves",
+      size: "XS,S,M,L",
+      type: "Vented,Closed",
+      quantity: "6 pcs/blister"
+    },
+    {
+      id: "hearing1",
+      name: "Premium Hearing Aid",
+      brand: "AudioTech",
+      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=150&h=150&fit=crop&crop=center",
+      category: "Hearing Aids",
+      type: "Digital",
+      size: "Medium"
+    }
+  ]
+
+  const openModal = (product) => {
+    setSelectedProduct(product)
+    setIsModalOpen(true)
   }
 
   return (
-    <div className="p-8 max-w-4xl mx-auto">
+    <div className="p-8 max-w-6xl mx-auto">
       <div className="bg-white rounded-lg shadow-lg p-6">
-        <h1 className="text-3xl font-bold mb-6 text-gray-800">WhatsApp Booking Demo</h1>
+        <h1 className="text-3xl font-bold mb-6 text-gray-800">Product Booking Demo</h1>
         
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
           <h2 className="text-lg font-semibold mb-2">How it works:</h2>
           <ul className="text-sm text-gray-700 space-y-1">
-            <li>• Fill out the booking form with your details</li>
-            <li>• Click "Send to WhatsApp" to open WhatsApp with pre-filled message</li>
-            <li>• If WhatsApp doesn't open automatically, use the manual options</li>
-            <li>• Your booking details will be sent to Just Hearing Clinic</li>
+            <li>• Accessories (ear tips, wax guards, sleeves) will show size selection</li>
+            <li>• Regular hearing aids will use the standard booking form</li>
+            <li>• Size selection is mandatory for accessories</li>
+            <li>• All details including size will be sent via WhatsApp</li>
           </ul>
         </div>
 
-        <div className="flex items-center gap-4 mb-6 p-4 bg-gray-50 rounded-lg">
-          <img 
-            src={sampleProduct.image} 
-            alt={sampleProduct.name}
-            className="w-20 h-20 object-cover rounded-lg"
-          />
-          <div>
-            <h3 className="text-xl font-semibold">{sampleProduct.name}</h3>
-            <p className="text-gray-600">{sampleProduct.brand} • {sampleProduct.category}</p>
-            <p className="text-2xl font-bold text-blue-600">₹{sampleProduct.price.toFixed(2)}</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          {sampleProducts.map(product => (
+            <div key={product.id} className="bg-gray-50 rounded-lg p-4">
+              <img 
+                src={product.image} 
+                alt={product.name}
+                className="w-full h-32 object-cover rounded-lg mb-3"
+              />
+              <h3 className="font-semibold text-sm mb-1">{product.name}</h3>
+              <p className="text-xs text-gray-600 mb-2">{product.brand} • {product.category}</p>
+              {product.subcategory && (
+                <p className="text-xs text-blue-600 mb-2">{product.subcategory}</p>
+              )}
+              {product.size && (
+                <p className="text-xs text-green-600 mb-2">Sizes: {product.size}</p>
+              )}
+              <Button 
+                onClick={() => openModal(product)}
+                size="sm"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white text-xs"
+              >
+                <ShoppingCart className="w-3 h-3 mr-1" />
+                Book Now
+              </Button>
+            </div>
+          ))}
         </div>
-        
-        <Button 
-          onClick={() => setIsModalOpen(true)}
-          size="lg"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-        >
-          <ShoppingCart className="w-5 h-5 mr-2" />
-          Book This Product
-        </Button>
       </div>
       
       <ProductBookingModal 
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        product={sampleProduct}
+        onClose={() => {
+          setIsModalOpen(false)
+          setSelectedProduct(null)
+        }}
+        product={selectedProduct}
       />
     </div>
   )

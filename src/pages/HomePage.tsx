@@ -105,7 +105,7 @@ export function HomePage() {
         </div>
         
         <div className="container mx-auto px-4">
-          <div className={`text-center mb-16 transform transition-all duration-1000 ${
+          <div className={`text-center mb-16 transform transition-all duration-400 ease-out ${
             visibleSections.has('about') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-900 mb-4 mobile-heading-scale">
@@ -118,7 +118,7 @@ export function HomePage() {
               Kottayam's premier hearing care center, dedicated to transforming lives through exceptional audiological services since 2008
             </p>
           </div>
-          <div className={`transform transition-all duration-1000 delay-300 ${
+          <div className={`transform transition-all duration-400 delay-100 ease-out ${
             visibleSections.has('about') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             <AboutUsSection />
@@ -143,63 +143,13 @@ export function HomePage() {
         <BookAppointmentSection />
       </div>
 
-       {/* CTA Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600 relative overflow-hidden mobile-section-spacing" data-animate id="cta">
-        {/* Animated background elements */}
-        <div className="absolute inset-0">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-white/20 rounded-full animate-float-random"
-              style={{
-                left: `${10 + i * 12}%`,
-                top: `${20 + (i % 4) * 20}%`,
-                animationDelay: `${i * 0.8}s`,
-                animationDuration: `${2 + i * 0.3}s`
-              }}
-            />
-          ))}
-        </div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className={`flex items-center justify-center mb-6 transform transition-all duration-1000 ${
-            visibleSections.has('cta') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          } mobile-flex-col mobile-gap-4`}>
-            <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mr-4 hover:scale-110 transition-transform duration-300">
-              <ArrowRight className="w-6 h-6 text-white" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mobile-heading-scale text-center sm:text-left">Ready to Improve Your Hearing?</h2>
-          </div>
-          <p className={`text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto transform transition-all duration-1000 delay-300 mobile-text-scale ${
-            visibleSections.has('cta') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            Schedule your free consultation today and take the first step towards better hearing
-          </p>
-          <div className={`flex flex-col sm:flex-row gap-4 justify-center transform transition-all duration-1000 delay-500 mobile-flex-col mobile-gap-4 ${
-            visibleSections.has('cta') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <a href="#booking">
-              <Button className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white px-6 sm:px-8 py-4 text-base sm:text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 group w-full sm:w-auto touch-target mobile-button">
-                <Calendar className="w-5 h-5 mr-2" />
-                Schedule Free Consultation
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-              </Button>
-            </a>
-            <a href="tel:+918590310265">
-              <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-6 sm:px-8 py-4 text-base sm:text-lg rounded-full transition-all duration-300 hover:scale-105 hover:-translate-y-1 backdrop-blur-sm bg-white/10 w-full sm:w-auto touch-target mobile-button">
-                <Phone className="w-5 h-5 mr-2" />
-                Call +91-8590310265
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
+      
       
       <Footer />
       <FloatingActionButtons />
       
       {/* Custom CSS for animations */}
-      <style jsx>{`
+      <style >{`
         @keyframes gradient-x {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
@@ -224,19 +174,19 @@ export function HomePage() {
         
         .animate-gradient-x {
           background-size: 200% 200%;
-          animation: gradient-x 3s ease infinite;
+          animation: gradient-x 1.5s ease infinite;
         }
         
         .animate-float {
-          animation: float 6s ease-in-out infinite;
+          animation: float 3s ease-in-out infinite;
         }
         
         .animate-float-delayed {
-          animation: float-delayed 8s ease-in-out infinite;
+          animation: float-delayed 4s ease-in-out infinite;
         }
         
         .animate-float-random {
-          animation: float-random 4s ease-in-out infinite;
+          animation: float-random 2.5s ease-in-out infinite;
         }
         
         /* Smooth scrolling */
@@ -246,7 +196,7 @@ export function HomePage() {
         
         /* Hover effects for interactive elements */
         .hover-lift {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         
         .hover-lift:hover {

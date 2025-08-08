@@ -28,7 +28,7 @@ export function AudiologistProfile() {
         <div className={`text-center mb-6 sm:mb-16 transform transition-all duration-700 sm:duration-1000 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-lg sm:text-3xl lg:text-4xl font-bold text-blue-900 mb-2 sm:mb-4 mobile-heading-scale">Meet Kottayam's Leading Hearing Care Expert</h2>
+          <h2 className="text-lg sm:text-3xl lg:text-4xl font-bold text-blue-900 mb-2 sm:mb-4 mobile-heading-scale">Meet Kottayam's Leading Expert Audiologist</h2>
         </div>
 
         <div className={`max-w-2xl sm:max-w-4xl mx-auto transform transition-all duration-700 sm:duration-1000 sm:delay-300 ${
@@ -45,7 +45,7 @@ export function AudiologistProfile() {
               </div>
               <div className="flex-1 flex flex-col gap-4 sm:gap-6 text-center md:text-left px-1">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-1 sm:mb-2 group-hover:text-cyan-600 transition-colors duration-300">Remya Ravi, M.ASLP</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-1 sm:mb-2 group-hover:text-cyan-600 transition-colors duration-300">Remya Ravi, MASLP</h3>
                   <p className="text-base sm:text-lg text-cyan-600 font-semibold group-hover:text-blue-600 transition-colors duration-300">Chief Audiologist & Speech-Language Pathologist | Co-founder</p>
                 </div>
                 <div className="bg-white/80 rounded-lg p-3 sm:p-5 flex flex-col gap-3 sm:gap-4 shadow-sm">
@@ -54,8 +54,7 @@ export function AudiologistProfile() {
                     <ul className="list-disc list-inside text-gray-700 text-sm sm:text-base leading-relaxed space-y-1 text-left">
                       <li>Master's in Audiology & Speech Language Pathology - Sri Ramachandra Medical College, Chennai</li>
                       <li>15+ Years Clinical Experience</li>
-                      <li>Consultant at SDM Medical College, Hubli</li>
-                      <li>Expert in Diagnostics & Patient-Centered Care</li>
+                      
                     </ul>
                   </div>
                   <div>
@@ -69,7 +68,7 @@ export function AudiologistProfile() {
                   <a href="#booking">
                     <Button className="bg-cyan-600 hover:bg-cyan-700 text-white transition-all duration-300 hover:scale-105 hover:-translate-y-1 group w-full sm:w-auto touch-target mobile-button text-base sm:text-lg mt-2">
                       <Calendar className="h-4 w-4 mr-2" />
-                      <span className="group-hover:animate-pulse">Book Appointment with Dr Remya</span>
+                      <span className="group-hover:animate-pulse">Book Appointment with Remya Ravi</span>
                     </Button>
                   </a>
                 </div>

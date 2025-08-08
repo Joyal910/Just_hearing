@@ -226,22 +226,7 @@ export function GalleryPage() {
                   </div>
                 </div>
                 
-                {/* Sliding Text Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out">
-                  <div className="bg-gradient-to-t from-black/90 via-black/70 to-transparent p-6 pt-12">
-                    
-                    
-                    {/* Title */}
-                    <h3 className="text-white font-semibold text-lg mb-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                      {image.title}
-                    </h3>
-                    
-                    {/* Description */}
-                    <p className="text-gray-200 text-sm leading-relaxed transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-200">
-                      {image.description}
-                    </p>
-                  </div>
-                </div>
+                
                 
                 {/* Modern Border Effect */}
                 <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-cyan-400/50 transition-all duration-500"></div>
@@ -284,15 +269,7 @@ export function GalleryPage() {
                       </div>
                     </div>
                     
-                    {/* Mobile Text Overlay - Always Visible */}
-                    <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
-                      <h3 className="text-white font-semibold text-sm sm:text-base mb-1 leading-tight line-clamp-2">
-                        {image.title}
-                      </h3>
-                      <p className="text-gray-200 text-xs sm:text-sm leading-relaxed line-clamp-2 opacity-90">
-                        {image.description}
-                      </p>
-                    </div>
+                   
                     
                     {/* Mobile Border Effect */}
                     <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-transparent group-hover:border-cyan-400/50 transition-all duration-300"></div>
@@ -350,65 +327,12 @@ export function GalleryPage() {
               className="max-w-full max-h-full object-contain rounded-lg sm:rounded-xl shadow-2xl animate-scale-in"
             />
 
-            {/* Modern Image Info */}
-            <div className="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-black/60 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-6 text-white border border-white/10 animate-slide-up">
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <h3 className="text-lg sm:text-2xl font-semibold mb-1 sm:mb-2">{filteredImages[currentImageIndex].title}</h3>
-                  <p className="text-gray-200 text-sm sm:text-base mb-2 sm:mb-3">{filteredImages[currentImageIndex].description}</p>
-                 
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       )}
 
-       {/* CTA Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600 relative overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-white/20 rounded-full animate-pulse"
-              style={{
-                left: `${10 + i * 12}%`,
-                top: `${20 + (i % 4) * 20}%`,
-                animationDelay: `${i * 0.8}s`,
-                animationDuration: `${2 + i * 0.3}s`
-              }}
-            />
-          ))}
-        </div>
-        
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex flex-col sm:flex-row items-center justify-center mb-6 gap-4 sm:gap-0">
-            <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center sm:mr-4">
-              <ArrowRight className="w-6 h-6 text-white" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">Ready to Improve Your Hearing?</h2>
-          </div>
-          <p className="text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-            Schedule your free consultation today and take the first step towards better hearing
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-            <a href="#booking">
-              <Button className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group w-full sm:w-auto touch-target">
-                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Schedule Free Consultation
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-              </Button>
-            </a>
-            <a href="tel:+918590310265">
-              <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm bg-white/10 w-full sm:w-auto touch-target">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Call +91-8590310265
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
+      
 
       <Footer />
       <FloatingActionButtons />

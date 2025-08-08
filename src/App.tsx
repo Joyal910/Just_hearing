@@ -7,11 +7,13 @@ import PatientStoriesPage from '@/pages/PatientStoriesPage';
 import { GalleryPage } from '@/pages/GalleryPage';
 import { ContactPage } from '@/pages/ContactPage';
 import { FreeTrialModal } from './components/ui/FreeTrialModal';
+import { ScrollToTop } from './components/ScrollToTop'; // 👈 import it
 
 export default function App() {
   return (
-    <Router>
+    <>
       <FreeTrialModal />
+      <ScrollToTop /> {/* 👈 Add this here */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
@@ -21,6 +23,6 @@ export default function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
-    </Router>
+    </>
   );
 }

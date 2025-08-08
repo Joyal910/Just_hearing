@@ -29,7 +29,7 @@ export default function BookAppointmentSection() {
       { threshold: 0.2 }
     )
 
-    const element = document.getElementById('booking-section')
+    const element = document.getElementById('booking')
     if (element) observer.observe(element)
 
     return () => observer.disconnect()
@@ -262,7 +262,7 @@ ${formData.concerns}` : ''}
         </div>
       </div>
       {/* Custom CSS for gradient animation */}
-      <style jsx>{`
+      <style>{`
         @keyframes gradient-x {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }

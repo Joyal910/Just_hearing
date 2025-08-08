@@ -1,9 +1,29 @@
 import { Ear, Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Twitter, ArrowRight, Calendar, MessageCircle } from "lucide-react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { Button } from "@/components/ui/button"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const [visibleSections, setVisibleSections] = useState(new Set())
+
+  // Intersection Observer for animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections(prev => new Set([...prev, entry.target.id]))
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    const ctaElement = document.getElementById('cta')
+    if (ctaElement) observer.observe(ctaElement)
+
+    return () => observer.disconnect()
+  }, [])
 
   const quickLinks = [
     { name: "About Us", path: "/about" },
@@ -52,6 +72,58 @@ export function Footer() {
 
   return (
     <footer className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600 text-white overflow-hidden">
+      {/* CTA Section */}
+      <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden" id="cta">
+        {/* Animated background elements */}
+        <div className="absolute inset-0">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 bg-white/20 rounded-full animate-pulse"
+              style={{
+                left: `${10 + i * 12}%`,
+                top: `${20 + (i % 4) * 20}%`,
+                animationDelay: `${i * 0.8}s`,
+                animationDuration: `${2 + i * 0.3}s`
+              }}
+            />
+          ))}
+        </div>
+       
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className={`flex flex-col sm:flex-row items-center justify-center mb-6 gap-4 transform transition-all duration-1000 ${
+            visibleSections.has('cta') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300">
+              <ArrowRight className="w-6 h-6 text-white" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">Ready to Improve Your Hearing?</h2>
+          </div>
+          <p className={`text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto transform transition-all duration-1000 delay-300 ${
+            visibleSections.has('cta') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            Schedule your free consultation today and take the first step towards better hearing
+          </p>
+          <div className={`flex flex-col sm:flex-row gap-4 justify-center transform transition-all duration-1000 delay-500 ${
+            visibleSections.has('cta') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            <Link to="/?scroll=booking" className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white px-6 sm:px-8 py-4 text-base sm:text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 group w-full sm:w-auto inline-flex items-center justify-center">
+              <Calendar className="w-5 h-5 mr-2" />
+              Schedule Free Consultation
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+
+            <a href="tel:+918590310265" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-6 sm:px-8 py-4 text-base sm:text-lg rounded-full transition-all duration-300 hover:scale-105 hover:-translate-y-1 backdrop-blur-sm bg-white/10 w-full sm:w-auto inline-flex items-center justify-center">
+              <Phone className="w-5 h-5 mr-2" />
+              Call +91-8590310265
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Separator */}
+      <div className="border-t border-white/10"></div>
+
       {/* Main Footer Content */}
       <div className="relative z-10 py-8 sm:py-12 lg:py-16">
         <div className="container mx-auto px-4 sm:px-6">
@@ -110,13 +182,13 @@ export function Footer() {
               <ul className="space-y-3 sm:space-y-4">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <Link 
-                      to={link.path} 
+                    <a 
+                      href={link.path} 
                       className="text-blue-200 hover:text-white transition-all duration-300 flex items-center justify-center sm:justify-start group text-sm sm:text-base hover:translate-x-2 py-1"
                     >
                       <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300 text-cyan-400" />
                       <span className="group-hover:text-cyan-300 transition-colors duration-300">{link.name}</span>
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>

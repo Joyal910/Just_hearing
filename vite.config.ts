@@ -4,7 +4,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  base: '/Just_hearing/', // <-- this is critical for GitHub Pages
   plugins: [react()],
   resolve: {
     alias: {
