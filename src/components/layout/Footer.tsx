@@ -39,7 +39,7 @@ export function Footer() {
     "Hearing Assessment",
     "Hearing Aid Fitting",
     "Pediatric Audiology",
-    "Tinnitus Treatment",
+    "Tinnitus Retraining Therapy",
     "Speech Therapy",
     "Hearing Aid Repair"
   ]

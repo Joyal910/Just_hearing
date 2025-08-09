@@ -117,7 +117,7 @@ src : gallery10,      title: "Expert Audiologist",
 src : gallery11,      title: "Expert Audiologist",
       category: "team",
       description: "Our experienced team of certified audiologists"
-    }
+    },
     {
       id: 12,
 src : gallery12,      title: "Expert Audiologist",

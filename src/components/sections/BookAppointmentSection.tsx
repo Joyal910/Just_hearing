@@ -39,7 +39,7 @@ export default function BookAppointmentSection() {
     "Free Hearing Assessment",
     "Hearing Aid Consultation",
     "Pediatric Hearing Test",
-    "Tinnitus Evaluation",
+    "Tinnitus Retraining Evaluation",
     "Hearing Aid Repair",
     "Follow-up Appointment"
   ]

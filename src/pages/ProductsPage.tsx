@@ -77,7 +77,7 @@ export function ProductsPage() {
       "Rechargeable lithium‑ion battery",
       "Bluetooth streaming (calls, music, TV)",
       "Remote control via Signia app",
-      "Tinnitus therapy options"
+      "Tinnitus retrianing therapy options"
     ]
   },
   {
@@ -90,7 +90,7 @@ export function ProductsPage() {
     features: [
       "Bluetooth streaming for iOS & Android",
       "Built‑in telecoil",
-      "Tinnitus therapy",
+      "Tinnitus retraining therapy",
       "Directional microphones for clear speech"
     ]
   },
