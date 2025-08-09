@@ -14,6 +14,11 @@ import gallery4 from "../assets/gallery/gallery4.jpeg"
 import gallery5 from "../assets/gallery/gallery5.jpeg"
 import gallery6 from "../assets/gallery/gallery6.jpeg"
 import gallery7 from "../assets/gallery/gallery7.jpeg"
+import gallery8 from "../assets/gallery/gallery8.jpeg"
+import gallery9 from "../assets/gallery/gallery9.jpeg"
+import gallery10 from "../assets/gallery/gallery10.jpeg"
+import gallery11 from "../assets/gallery/gallery11.jpeg"
+import gallery12 from "../assets/gallery/gallery12.jpeg"
 
 
 
@@ -86,6 +91,36 @@ src : gallery1,      title: "Hearing Aid Fitting",
     {
       id: 7,
 src : gallery2,      title: "Expert Audiologist",
+      category: "team",
+      description: "Our experienced team of certified audiologists"
+    },
+    {
+      id: 8,
+src : gallery8,      title: "Expert Audiologist",
+      category: "team",
+      description: "Our experienced team of certified audiologists"
+    },
+    {
+      id: 9,
+src : gallery9,      title: "Expert Audiologist",
+      category: "team",
+      description: "Our experienced team of certified audiologists"
+    },
+    {
+      id: 10,
+src : gallery10,      title: "Expert Audiologist",
+      category: "team",
+      description: "Our experienced team of certified audiologists"
+    },
+    {
+      id: 11,
+src : gallery11,      title: "Expert Audiologist",
+      category: "team",
+      description: "Our experienced team of certified audiologists"
+    }
+    {
+      id: 12,
+src : gallery12,      title: "Expert Audiologist",
       category: "team",
       description: "Our experienced team of certified audiologists"
     }
