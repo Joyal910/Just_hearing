@@ -14,8 +14,8 @@ export function SEOHead({
   title = "Just Hearing Clinic - Best Audiologist & Hearing Aids in Kottayam, Kerala",
   description = "Leading hearing care clinic in Kottayam, Kerala. Expert audiologists, advanced hearing aids, free hearing tests. Serving Puthupally, Changanassery & surrounding areas since 2008.",
   keywords = "hearing aids Kottayam, audiologist Kerala, hearing test Puthupally, speech therapy Kottayam, hearing clinic Kerala",
-  canonicalUrl = "https://justhearingclinic.com",
-  ogImage = "https://justhearingclinic.com/og-image.jpg",
+  canonicalUrl = "https://justhearing.in",
+  ogImage = "https://justhearing.in/og-image.jpg",
   noIndex = false,
   structuredData
 }: SEOHeadProps) {

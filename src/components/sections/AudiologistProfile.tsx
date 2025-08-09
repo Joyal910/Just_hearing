@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "lucide-react"
+import drremya from "../../assets/images/drremya.jpeg"
 
 export function AudiologistProfile() {
   const [isVisible, setIsVisible] = useState(false)
@@ -38,7 +39,7 @@ export function AudiologistProfile() {
             <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 p-4 sm:p-8">
               <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 flex-shrink-0 mb-4 md:mb-0 md:mr-6 flex items-center justify-center">
                 <img
-                  src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?_gl=1*uub3fv*_ga*NTAwNzc5MzMuMTc1MDAwODcyMA..*_ga_8JE65Q40S6*czE3NTE3MzE2NzYkbzMkZzEkdDE3NTE3MzE3MzQkajIkbDAkaDA."
+                  src= {drremya}
                   alt="Remya Ravi - Chief Audiologist"
                   className="w-full h-full object-cover rounded-xl shadow-md"
                 />

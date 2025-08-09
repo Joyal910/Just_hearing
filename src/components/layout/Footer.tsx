@@ -59,14 +59,14 @@ export function Footer() {
     {
       icon: Mail,
       label: "Email Us",
-      value: "info@justhearingclinic.com",
-      subValue: "appointments@justhearingclinic.com"
+      value: "info@justhearing.in",
+      subValue: "appointments@justhearing.in"
     },
     {
       icon: Clock,
       label: "Working Hours",
       value: "Mon-Sat: 9:00 AM - 6:00 PM",
-      subValue: "Sunday: 10:00 AM - 4:00 PM"
+      subValue: "Sunday: closed"
     }
   ]
 
@@ -229,7 +229,7 @@ export function Footer() {
                         if (contact.icon === Phone) {
                           window.location.href = 'tel:+918590310265'
                         } else if (contact.icon === Mail) {
-                          window.location.href = 'mailto:info@justhearingclinic.com'
+                          window.location.href = 'mailto:info@justhearing.in'
                         } else if (contact.icon === MapPin) {
                           window.open('https://www.google.com/maps/place/Just+Hearing+clinic/@9.557094,76.5709162,17z', '_blank', 'noopener,noreferrer')
                         }

@@ -7,6 +7,7 @@ import { FloatingActionButtons } from "@/components/layout/FloatingActionButtons
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Heart, Star, Award, Users, Clock, MapPin, CheckCircle, Target, Eye, Lightbulb, TrendingUp, Shield, Globe, Sparkles, Zap, ArrowRight, Phone, Calendar, CreditCard as CreditCardIcon, BriefcaseIcon ,HomeIcon,RepeatIcon } from "lucide-react"
+import drremya from "../assets/images/drremya.jpeg"
 
 export function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -75,7 +76,7 @@ export function AboutPage() {
     "@type": "AboutPage",
     "name": "About Just Hearing Clinic",
     "description": "Learn about Just Hearing Clinic's history, mission, and expert team of audiologists serving Kottayam, Kerala since 2008.",
-    "url": "https://justhearingclinic.com/about",
+    "url": "https://justhearing.in/about",
     "mainEntity": {
       "@type": "MedicalBusiness",
       "name": "Just Hearing Clinic",
@@ -99,7 +100,7 @@ export function AboutPage() {
     {
       name: "Remya Ravi, M.ASLP",
       role: "Chief Audiologist & Speech-Language Pathologist | Co-founder",
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: drremya,
       qualifications: ["Master's in Audiology & Speech Language Pathology - Sri Ramachandra Medical College, Chennai", "15+ Years Clinical Experience", "Consultant at SDM Medical College, Hubli"],
       specialties: ["Diagnostics", "Speech & Language Disorders", "Patient-Centered Care"]
     }
@@ -161,7 +162,7 @@ export function AboutPage() {
         title="About Us - Just Hearing Clinic | Expert Audiologists in Kottayam, Kerala"
         description="Learn about Just Hearing Clinic's 15+ years of excellence in hearing care. Meet our expert team of RCI-certified audiologists serving Kottayam, Kerala since 2008."
         keywords="about just hearing clinic, audiologist team Kottayam, hearing clinic history Kerala, RCI certified audiologists, hearing care experts Kottayam"
-        canonicalUrl="https://justhearingclinic.com/about"
+        canonicalUrl="https://justhearing.in/about"
         structuredData={aboutPageStructuredData}
       />
       

@@ -3,6 +3,7 @@ import { Heart, Star, Award, Users, Shield, CreditCard } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import aboutusimage from "../../assets/images/aboutusimage.jpeg"
 
+
 const AboutUsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [counters, setCounters] = useState({ patients: 0, years: 0, brands: 0 });

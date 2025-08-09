@@ -49,7 +49,7 @@ export function HomePage() {
     "@type": "MedicalClinic",
     "name": "Just Hearing Clinic",
     "description": "Clinic for audiology, hearing aids, and speech therapy in Puthupally, Kottayam.",
-    "url": "https://justhearingclinic.com",
+    "url": "https://justhearing.in",
     "telephone": "+91-8590310265",
     "address": {
       "@type": "PostalAddress",
@@ -83,7 +83,7 @@ export function HomePage() {
         title="Just Hearing Clinic - Best Audiologist & Hearing Aids in Kottayam, Kerala"
         description="Leading hearing care clinic in Kottayam, Kerala. Expert audiologists, advanced hearing aids, free hearing tests. Serving Puthupally, Changanassery & surrounding areas since 2008. Book consultation today!"
         keywords="hearing aids Kottayam, audiologist Kerala, hearing test Puthupally, speech therapy Kottayam, hearing clinic Kerala, best audiologist Kottayam, hearing loss treatment, cochlear implants Kerala"
-        canonicalUrl="https://justhearingclinic.com"
+        canonicalUrl="https://justhearing.in"
         structuredData={homePageStructuredData}
       />
       

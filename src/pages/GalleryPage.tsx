@@ -27,7 +27,7 @@ export function GalleryPage() {
     "@type": "ImageGallery",
     "name": "Just Hearing Clinic Gallery",
     "description": "View our state-of-the-art hearing clinic facility, advanced equipment, and expert team serving Kottayam, Kerala.",
-    "url": "https://justhearingclinic.com/gallery"
+    "url": "https://justhearing.in/gallery"
   }
 
   const galleryImages = [
@@ -159,7 +159,7 @@ export function GalleryPage() {
         title="Gallery - Just Hearing Clinic | Facility & Equipment Photos Kottayam"
         description="View our modern hearing clinic facility in Kottayam, Kerala. See our advanced audiological equipment, comfortable consultation rooms, and expert team photos."
         keywords="hearing clinic photos Kottayam, audiologist facility Kerala, hearing clinic gallery, modern hearing equipment, Just Hearing Clinic images"
-        canonicalUrl="https://justhearingclinic.com/gallery"
+        canonicalUrl="https://justhearing.in/gallery"
         structuredData={galleryPageStructuredData}
       />
       

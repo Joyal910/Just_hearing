@@ -41,12 +41,12 @@ export function ContactPage() {
     "@type": "ContactPage",
     "name": "Contact Just Hearing Clinic",
     "description": "Contact Just Hearing Clinic in Kottayam, Kerala. Book appointments, get directions, and reach our expert audiologists for hearing care services.",
-    "url": "https://justhearingclinic.com/contact",
+    "url": "https://justhearing.in/contact",
     "mainEntity": {
       "@type": "MedicalBusiness",
       "name": "Just Hearing Clinic",
       "telephone": "+91-8590310265",
-      "email": "info@justhearingclinic.com",
+      "email": "info@justhearing.in",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Puthupally",
@@ -190,7 +190,7 @@ export function ContactPage() {
       
       // Add timestamp and user agent for additional security context
       formDataToSend.append('_timestamp', new Date().toISOString())
-      formDataToSend.append('_source', 'justhearingclinic.com')
+      formDataToSend.append('_source', 'justhearing.in')
       formDataToSend.append('_token', generateFormToken())
 
       // Submit to Formspree
@@ -257,7 +257,7 @@ export function ContactPage() {
       icon: Mail,
       title: "Email Us",
       details: [
-        "info@justhearingclinic.com",
+        "info@justhearing.in",
       ],
       action: "Send Email",
       color: "#01194a"
@@ -374,7 +374,7 @@ export function ContactPage() {
                       if (info.title === "Call / WhatsApp Us") {
                         window.location.href = 'tel:+918590310265'
                       } else if (info.title === "Email Us") {
-                        window.location.href = 'mailto:info@justhearingclinic.com'
+                        window.location.href = 'mailto:info@justhearing.in'
                       } else if (info.title === "Visit Our Clinic") {
                         window.open('https://www.google.com/maps/place/Just+Hearing+clinic/@9.557094,76.5697406,536m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3b062f728bdb7a33:0xeefc0bd6dc46b019!8m2!3d9.557094!4d76.5709162!16s%2Fg%2F11k3vk2vyq?entry=ttu&g_ep=EgoyMDI1MDgwNS4wIKXMDSoASAFQAw%3D%3D', '_blank', 'noopener,noreferrer')
                       } else if (info.title === "Working Hours") {

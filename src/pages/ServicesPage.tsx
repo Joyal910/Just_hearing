@@ -7,6 +7,20 @@ import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle, Calendar, Phone, Star, Stethoscope, Heart, Ear, Clock, Sparkles, Zap, ArrowRight } from "lucide-react"
+import pta from "../assets/Services/pure tone testing.jpg"
+import hearingaid1 from "../assets/Services/Hearing-Aid-Selection-1024x640.webp"
+import hearingaid2 from "../assets/Services/woman-having-new-hearing-aids-fitted-by-her-hearing-specialist.jpg"
+import hearingaid3 from "../assets/Services/59fb1d3aea67e28806fcbfd5118639f1880e06b0.jpeg"
+import hearingaid4 from "../assets/Services/fitting-hearing-aids-with-glasses-1024x1024.jpg"
+import hearingaid5 from "../assets/Services/Follow-ups-3-min.png"
+import speechtherapy1 from "../assets/Services/woman-doing-speech-therapy-with-little-boy-her-clinic.jpg"
+import speechtherapy2 from "../assets/Services/woman-doing-speech-therapy-with-little-blonde-boy.jpg"
+import speechtherapy3 from "../assets/Services/psychologist-helping-little-girl-speech-therapy.jpg"
+import speechtherapy4 from "../assets/Services/swallowing therapy.jpg"
+import speechtherapy5 from "../assets/Services/auditory therappy.png"
+
+
+
 
 export function ServicesPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -47,7 +61,7 @@ export function ServicesPage() {
       title: "Pure Tone Audiometry",
       description: "A standard hearing test that measures the softest sounds a person can hear at different pitches and volumes.",
       detailedDescription: "Pure Tone Audiometry (PTA) is the gold standard for hearing assessment. This comprehensive test evaluates your hearing sensitivity across different frequencies and intensities, providing crucial information about the type, degree, and configuration of hearing loss. The test is conducted in a soundproof booth using calibrated audiometric equipment to ensure accurate results.",
-      image: "https://www.shutterstock.com/image-photo/male-patient-wearing-audiology-headphones-600nw-2256475207.jpg",
+      image: pta,
       category: "diagnostic",
       duration: "45-60 minutes",
       preparation: "No special preparation required",
@@ -189,7 +203,7 @@ export function ServicesPage() {
       title: "Hearing Aids Prescription & Fitting",
       description: "Personalized assessment and selection of hearing aids to match the patient's hearing loss and lifestyle.",
       detailedDescription: "Our comprehensive hearing aid prescription and fitting service ensures you receive the most appropriate hearing technology for your specific needs. We consider your hearing loss pattern, lifestyle, dexterity, and personal preferences to recommend the best solution. The fitting process includes real-ear measurements to verify optimal performance.",
-      image: "https://images.pexels.com/photos/7659564/pexels-photo-7659564.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: hearingaid1,
       category: "hearing-aids",
       duration: "90-120 minutes",
       preparation: "Bring a family member for support and feedback",
@@ -217,7 +231,7 @@ export function ServicesPage() {
       title: "Hearing Aids Trial",
       description: "Allows patients to experience different hearing aids in real-life scenarios before committing to a purchase.",
       detailedDescription: "Our hearing aid trial program lets you experience the benefits of hearing aids in your daily life before making a purchase decision. Try different models and styles to find what works best for your lifestyle, comfort, and hearing needs.",
-      image: "https://images.pexels.com/photos/5214420/pexels-photo-5214420.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: hearingaid2,
       category: "hearing-aids",
       duration: "7-30 day trial period",
       preparation: "Keep a hearing diary during trial",
@@ -245,7 +259,7 @@ export function ServicesPage() {
       title: "Hearing Aids Programming",
       description: "Customizing hearing aid settings to suit the individual's hearing profile and preferences.",
       detailedDescription: "Professional hearing aid programming ensures your devices are optimally configured for your specific hearing loss and listening preferences. We use advanced software and real-ear measurements to fine-tune your hearing aids for maximum benefit and comfort.",
-      image: "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: hearingaid3,
       category: "hearing-aids",
       duration: "45-60 minutes",
       preparation: "Bring your current hearing aids and any concerns",
@@ -273,7 +287,7 @@ export function ServicesPage() {
       title: "Hearing Aids Accessories",
       description: "Enhance hearing aid functionality with compatible tools and accessories for better performance and comfort.",
       detailedDescription: "Expand your hearing aid capabilities with our range of accessories designed to improve your listening experience in challenging situations. From wireless streaming devices to remote controls, we offer solutions to enhance your hearing aid performance.",
-      image: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: hearingaid4,
       category: "hearing-aids",
       duration: "30-45 minutes consultation",
       preparation: "Bring your hearing aids for compatibility check",
@@ -301,7 +315,7 @@ export function ServicesPage() {
       title: "Hearing Aids Repair & Servicing",
       description: "Professional maintenance and repair service to keep hearing aids functioning efficiently.",
       detailedDescription: "Our comprehensive repair and servicing ensures your hearing aids continue to perform at their best. We provide both minor repairs and major overhauls, using genuine parts and following manufacturer specifications to restore optimal function.",
-      image: "https://images.pexels.com/photos/5214413/pexels-photo-5214413.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: hearingaid5,
       category: "hearing-aids",
       duration: "Same day to 1 week depending on repair",
       preparation: "Bring hearing aids, charger, and any accessories",
@@ -331,7 +345,7 @@ export function ServicesPage() {
       title: "Speech & Language Therapy",
       description: "Therapy to support individuals with speech delays, articulation issues, and communication disorders.",
       detailedDescription: "Our speech and language therapy services address a wide range of communication disorders in both children and adults. We provide individualized treatment plans to improve speech clarity, language development, and overall communication effectiveness.",
-      image: "https://images.pexels.com/photos/6303655/pexels-photo-6303655.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: speechtherapy1,
       category: "therapy",
       duration: "45-60 minutes per session",
       preparation: "Bring any previous therapy reports or assessments",
@@ -359,7 +373,7 @@ export function ServicesPage() {
       title: "Voice Therapy",
       description: "Specialized care to treat voice disorders such as hoarseness, vocal fatigue, and pitch issues.",
       detailedDescription: "Voice therapy addresses various voice disorders through specialized techniques and exercises. Our program helps restore healthy voice production, prevent vocal damage, and maintain vocal health for professional voice users.",
-      image: "https://images.pexels.com/photos/5214420/pexels-photo-5214420.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: speechtherapy2,
       category: "therapy",
       duration: "45-60 minutes per session",
       preparation: "Avoid excessive voice use before sessions",
@@ -387,7 +401,7 @@ export function ServicesPage() {
       title: "Stuttering Therapy",
       description: "Therapy designed to improve fluency and communication confidence for individuals with stuttering.",
       detailedDescription: "Our stuttering therapy program uses evidence-based techniques to improve speech fluency and communication confidence. We work with individuals of all ages to develop effective communication strategies and reduce the impact of stuttering on daily life.",
-      image: "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: speechtherapy3,
       category: "therapy",
       duration: "45-60 minutes per session",
       preparation: "Practice recommended techniques between sessions",
@@ -415,7 +429,7 @@ export function ServicesPage() {
       title: "Swallowing Therapy",
       description: "Rehabilitation service for individuals who have difficulty swallowing (dysphagia).",
       detailedDescription: "Swallowing therapy addresses dysphagia through specialized exercises and techniques to improve swallowing safety and efficiency. Our program helps patients regain safe swallowing function and prevent complications.",
-      image: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: speechtherapy4,
       category: "therapy",
       duration: "45-60 minutes per session",
       preparation: "Bring recent medical reports and current diet information",
@@ -443,7 +457,7 @@ export function ServicesPage() {
       title: "Auditory Verbal Therapy",
       description: "An early intervention approach for children with hearing loss to develop spoken language through listening.",
       detailedDescription: "Auditory Verbal Therapy is a specialized approach that teaches children with hearing loss to use their residual hearing and hearing technology to develop spoken language. This family-centered therapy involves parents as primary facilitators of their child's listening and spoken language development.",
-      image: "https://images.pexels.com/photos/6303655/pexels-photo-6303655.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: speechtherapy5,
       category: "therapy",
       duration: "45-60 minutes per session",
       preparation: "Ensure hearing devices are functioning properly",
@@ -505,7 +519,7 @@ export function ServicesPage() {
         title="Our Services - Just Hearing Clinic | Comprehensive Hearing Care Kottayam"
         description="Complete hearing healthcare services in Kottayam, Kerala. Diagnostic tests, hearing aids, speech therapy, and specialized treatments by expert audiologists."
         keywords="hearing services Kottayam, audiometry tests Kerala, hearing aid fitting, speech therapy Kottayam, hearing clinic services"
-        canonicalUrl="https://justhearingclinic.com/services"
+        canonicalUrl="https://justhearing.in/services"
         structuredData={servicesPageStructuredData}
       />
       
