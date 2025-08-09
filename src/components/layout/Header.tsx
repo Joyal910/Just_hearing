@@ -68,7 +68,7 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
               {/* Mobile Social Media Icons */}
               <div className="flex items-center space-x-2">
                 <a 
-                  href="https://www.instagram.com/your_instagram_profile" 
+                 href="https://www.instagram.com/justhearing.info?igsh=ZTlmY256MHhzNmNt"
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-cyan-400 hover:text-white transition-colors"
@@ -77,7 +77,7 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
                   <Instagram className="h-4 w-4" />
                 </a>
                 <a 
-                  href="https://www.youtube.com/your_youtube_channel" 
+                   href="https://www.youtube.com/@justhearing" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-cyan-400 hover:text-white transition-colors"

@@ -181,10 +181,10 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Hidden on mobile (sm and below), visible on desktop */}
       <button
         onClick={prevSlide}
-        className="absolute left-1 sm:left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 sm:p-4 transition-all duration-200 hover:scale-110 hover:-translate-x-1 group touch-target cursor-pointer"
+        className="hidden sm:block absolute left-1 sm:left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 sm:p-4 transition-all duration-200 hover:scale-110 hover:-translate-x-1 group touch-target cursor-pointer"
         aria-label="Previous slide"
         type="button"
       >
@@ -193,7 +193,7 @@ export function HeroSection() {
       
       <button
         onClick={nextSlide}
-        className="absolute right-1 sm:right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 sm:p-4 transition-all duration-200 hover:scale-110 hover:translate-x-1 group touch-target cursor-pointer"
+        className="hidden sm:block absolute right-1 sm:right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 sm:p-4 transition-all duration-200 hover:scale-110 hover:translate-x-1 group touch-target cursor-pointer"
         aria-label="Next slide"
         type="button"
       >
@@ -217,8 +217,8 @@ export function HeroSection() {
         ))}
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-2 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-20 animate-bounce cursor-pointer hover:scale-110 transition-transform duration-200">
+      {/* Scroll Indicator - Hidden on mobile (sm and below), visible on desktop */}
+      <div className="hidden sm:block absolute bottom-2 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-20 animate-bounce cursor-pointer hover:scale-110 transition-transform duration-200">
         <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/50 rounded-full flex justify-center hover:border-white/80 transition-colors duration-200">
           <div className="w-1 h-2 sm:h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
