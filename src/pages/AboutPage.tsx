@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Heart, Star, Award, Users, Clock, MapPin, CheckCircle, Target, Eye, Lightbulb, TrendingUp, Shield, Globe, Sparkles, Zap, ArrowRight, Phone, Calendar, CreditCard as CreditCardIcon, BriefcaseIcon ,HomeIcon,RepeatIcon } from "lucide-react"
 import drremya from "../assets/images/drremya.jpeg"
+import banner from "../assets/banner/about us.jpg"
+
 
 export function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -176,12 +178,12 @@ export function AboutPage() {
       <section className="relative min-h-[35vh] sm:min-h-[50vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            src={banner}
             alt="About Just Hearing Clinic background"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
         
         <div className="container mx-auto px-2 sm:px-4 pt-16 sm:pt-24 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">

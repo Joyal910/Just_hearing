@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Heart, Star, Award, Users, Shield, CreditCard } from 'lucide-react';
+import { Heart, Star, Award, Users, Shield, CreditCard, HomeIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import aboutusimage from "../../assets/images/aboutusimage.jpeg"
 
@@ -52,18 +52,15 @@ const AboutUsSection = () => {
     updateCounters();
   };
 
-  // Format patients count to show as "1 Lakh"
-  const formatPatientsCount = (count) => {
-    if (count >= 100000) {
-      return "1 Lakh+";
-    } else if (count >= 10000) {
-      const lakhs = (count / 100000).toFixed(1);
-      return `${lakhs} Lakh`;
-    } else if (count >= 1000) {
-      return `${Math.floor(count / 1000)}K+`;
-    }
-    return count.toString();
-  };
+  // Format patients count to Indian numbering system
+const formatPatientsCount = (count) => {
+  if (count >= 100000) {
+    return `${count.toLocaleString('en-IN')}+`;
+  } else if (count >= 1000) {
+    return `${count.toLocaleString('en-IN')}+`;
+  }
+  return count.toString();
+};
 
   return (
     <div id="about-section" className="py-6 sm:py-16 px-2 sm:px-6 lg:px-8 mobile-section-spacing">
@@ -132,11 +129,11 @@ const AboutUsSection = () => {
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
               }`}>
                 <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center hover:scale-110 hover:bg-cyan-200 transition-all duration-300">
-                  <CreditCard className="w-6 h-6 text-cyan-600" />
+                  <HomeIcon className="w-6 h-6 text-cyan-600" />
                 </div>
-                <h3 className="text-base sm:text-xl font-semibold text-gray-900">Affordable Care</h3>
+                <h3 className="text-base sm:text-xl font-semibold text-gray-900">Home Visit </h3>
                 <p className="text-gray-600 text-xs sm:text-base mobile-text-scale">
-                  Reliable & reachable hearing solutions with convenient EMI options available.
+                 Expert hearing care brought to your doorstep with our convenient home visit service
                 </p>
               </div>
 
@@ -180,7 +177,7 @@ const AboutUsSection = () => {
           </div>
           <div className="text-center p-3 sm:p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform transition-transform mobile-card-spacing">
             <div className="text-lg sm:text-4xl font-bold text-cyan-600 mb-1 sm:mb-2">{counters.brands}+</div>
-            <div className="text-gray-600 text-xs sm:text-base">Brand Collaborations</div>
+            <div className="text-gray-600 text-xs sm:text-base">Hearing Brand Collaborations</div>
           </div>
         </div>
         

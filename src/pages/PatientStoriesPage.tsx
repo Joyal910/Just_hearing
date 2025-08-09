@@ -6,6 +6,8 @@ import { FloatingActionButtons } from "@/components/layout/FloatingActionButtons
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Star, Quote, MapPin, Calendar, Heart, Users, Award, Play, ChevronLeft, ChevronRight, ExternalLink, Sparkles, ArrowRight, Phone } from "lucide-react"
+import banner from "../assets/banner/about us.jpg"
+
 
 export function PatientStoriesPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -99,12 +101,12 @@ export function PatientStoriesPage() {
       <section className="relative min-h-[30vh] sm:min-h-[50vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.pexels.com/photos/1130623/pexels-photo-1130623.jpeg?auto=compress&cs=tinysrgb&w=1920"
+      src={banner}
             alt="Patient success stories background"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-black/50"></div>
+         <div className="absolute inset-0 bg-black/20"></div>
         
         <div className="container mx-auto px-2 sm:px-4 pt-12 sm:pt-24 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">

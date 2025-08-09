@@ -195,12 +195,14 @@ export function ProductsSection() {
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </Link>
+              <Link to="#booking">
               <Button 
                 variant="outline" 
                 className="border-2 border-gray-300 hover:border-cyan-500 text-gray-700 hover:text-cyan-600 font-semibold px-6 sm:px-8 py-3 transition-all duration-300 hover:scale-105 hover:-translate-y-1 w-full sm:w-auto touch-target mobile-button"
               >
                 Get Expert Advice
               </Button>
+              </Link>
             </div>
           
         </div>

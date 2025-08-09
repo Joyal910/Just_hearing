@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Calendar, Award, AlertTriangle, CheckCircle, ArrowRight, Shield, Lock, Users, Star, HeadphonesIcon, Stethoscope, Building2, Globe } from "lucide-react"
+import banner from "../assets/banner/about us.jpg"
 
 
 export function ContactPage() {
@@ -266,9 +267,8 @@ export function ContactPage() {
       icon: Clock,
       title: "Working Hours",
       details: [
-        "Monday - Saturday: 9:00 AM - 6:00 PM",
-        "Sunday: 10:00 AM - 4:00 PM",
-        "Emergency: 24/7 Available"
+        "Monday - Saturday: 9:00 AM - 5:00 PM",
+        
       ],
       action: "Book Appointment",
       color: "#01194a"
@@ -300,12 +300,12 @@ export function ContactPage() {
       <section className="relative min-h-[35vh] md:min-h-[50vh] flex items-center overflow-hidden" data-animate id="hero">
         <div className="absolute inset-0">
           <img 
-            src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            src={banner}
             alt="Contact us background"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
         
         <div className="container mx-auto px-4 pt-16 sm:pt-24 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">

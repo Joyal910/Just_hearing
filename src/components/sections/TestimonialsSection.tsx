@@ -164,7 +164,7 @@ export function TestimonialsSection() {
         
         {/* See More Reviews Button */}
         <div className="text-center mt-4 sm:mt-8">
-          <a href="/patient-stories">
+          <a href="#/patient-stories">
             <button className="inline-block bg-white/90 hover:bg-white text-blue-900 font-bold rounded-full px-6 py-3 text-sm sm:text-base shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl backdrop-blur-sm">
               See More Reviews
             </button>

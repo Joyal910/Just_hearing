@@ -1,6 +1,7 @@
-import { Ear, Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Twitter, ArrowRight, Calendar, MessageCircle } from "lucide-react"
+import { Ear, Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Twitter,Youtube, ArrowRight, Calendar, MessageCircle } from "lucide-react"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import logo from "../../assets/faivon/logo.png"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -35,7 +36,7 @@ export function Footer() {
   ]
 
   const services = [
-    "Free Hearing Assessment",
+    "Hearing Assessment",
     "Hearing Aid Fitting",
     "Pediatric Audiology",
     "Tinnitus Treatment",
@@ -65,7 +66,7 @@ export function Footer() {
     {
       icon: Clock,
       label: "Working Hours",
-      value: "Mon-Sat: 9:00 AM - 6:00 PM",
+      value: "Mon-Sat: 9:00 AM - 5:00 PM",
       subValue: "Sunday: closed"
     }
   ]
@@ -131,15 +132,20 @@ export function Footer() {
             
             {/* Company Info */}
             <div className="lg:col-span-1 text-center sm:text-left">
-              <div className="flex items-center justify-center sm:justify-start space-x-3 mb-6">
-                <div className="bg-gradient-to-r from-cyan-400 to-blue-400 p-3 rounded-xl shadow-lg">
-                  <Ear className="h-7 w-7 sm:h-8 sm:w-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl sm:text-2xl lg:text-3xl font-bold">Just Hearing</h3>
-                  <p className="text-blue-200 font-medium text-sm sm:text-base">Clinic</p>
-                </div>
+             <div className="flex items-center justify-center sm:justify-start space-x-3 mb-6">
+<div className="bg-white p-3 rounded-xl shadow-lg">
+                  <img
+                  src={logo}
+                  alt="Just Hearing Logo"
+                  className="h-14 w-14 sm:h-16 sm:w-16 object-contain"
+                />
               </div>
+              <div>
+                <h3 className="text-2xl sm:text-2xl lg:text-3xl font-bold">Just Hearing</h3>
+                <p className="text-blue-200 font-medium text-sm sm:text-base">Clinic</p>
+              </div>
+            </div>
+
               <p className="text-blue-200 text-sm sm:text-base leading-relaxed mb-6 max-w-md mx-auto sm:mx-0">
                 Kottayam's premier hearing care center, dedicated to transforming lives through exceptional 
                 audiological services since 2008. We combine cutting-edge technology with compassionate care.
@@ -150,10 +156,9 @@ export function Footer() {
                 <h4 className="font-semibold text-white text-base sm:text-lg">Follow Us</h4>
                 <div className="flex justify-center sm:justify-start space-x-3">
                   {[
-                    { icon: Facebook, href: "https://www.facebook.com/justhearingclinic", color: "hover:bg-blue-600", label: "Facebook" },
-                    { icon: Instagram, href: "https://www.instagram.com/justhearingclinic", color: "hover:bg-pink-600", label: "Instagram" },
-                    { icon: Linkedin, href: "https://www.linkedin.com/company/justhearingclinic", color: "hover:bg-blue-700", label: "LinkedIn" },
-                    { icon: Twitter, href: "https://twitter.com/justhearingclinic", color: "hover:bg-blue-400", label: "Twitter" }
+                    { icon: Youtube, href: "https://www.youtube.com/@justhearing", color: "hover:bg-blue-600", label: "Facebook" },
+                    { icon: Instagram, href: "https://www.instagram.com/justhearing.info/?igsh=ZTlmY256MHhzNmNt#", color: "hover:bg-pink-600", label: "Instagram" },
+                    
                   ].map((social, index) => {
                     const IconComponent = social.icon
                     return (
@@ -231,7 +236,7 @@ export function Footer() {
                         } else if (contact.icon === Mail) {
                           window.location.href = 'mailto:info@justhearing.in'
                         } else if (contact.icon === MapPin) {
-                          window.open('https://www.google.com/maps/place/Just+Hearing+clinic/@9.557094,76.5709162,17z', '_blank', 'noopener,noreferrer')
+                          window.open('https://www.google.com/maps/place/Just+Hearing+clinic/@9.557094,76.5697406,536m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3b062f728bdb7a33:0xeefc0bd6dc46b019!8m2!3d9.557094!4d76.5709162!16s%2Fg%2F11k3vk2vyq?entry=ttu&g_ep=EgoyMDI1MDgwNS4wIKXMDSoASAFQAw%3D%3D', '_blank', 'noopener,noreferrer')
                         }
                       }}
                     >

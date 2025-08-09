@@ -18,6 +18,7 @@ import speechtherapy2 from "../assets/Services/woman-doing-speech-therapy-with-l
 import speechtherapy3 from "../assets/Services/psychologist-helping-little-girl-speech-therapy.jpg"
 import speechtherapy4 from "../assets/Services/swallowing therapy.jpg"
 import speechtherapy5 from "../assets/Services/auditory therappy.png"
+import banner from "../assets/banner/about us.jpg"
 
 
 
@@ -533,12 +534,12 @@ export function ServicesPage() {
 <section className="relative min-h-[35vh] md:min-h-[50vh] flex items-center overflow-hidden">
   <div className="absolute inset-0">
     <img 
-      src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1920"
+      src={banner}
       alt="Our Services"
       className="w-full h-full object-cover"
     />
   </div>
-  <div className="absolute inset-0 bg-black/50"></div>
+ <div className="absolute inset-0 bg-black/20"></div>
 
   <div className="container mx-auto px-4 pt-12 sm:pt-16 md:pt-24 relative z-10">
     <div className="max-w-4xl mx-auto text-center text-white">

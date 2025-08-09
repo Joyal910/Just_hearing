@@ -6,6 +6,8 @@ import { FloatingActionButtons } from "@/components/layout/FloatingActionButtons
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { X, ZoomIn, ChevronLeft, ChevronRight, Play, Award, Users, Heart, ArrowRight, Phone, Calendar } from "lucide-react"
+import banner from "../assets/banner/about us.jpg"
+
 
 export function GalleryPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -174,12 +176,12 @@ export function GalleryPage() {
   {/* Background Image */}
   <div className="absolute inset-0">
     <img 
-      src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1920"
+      src={banner}
       alt="About Just Hearing Clinic background"
       className="w-full h-full object-cover"
     />
   </div>
-  <div className="absolute inset-0 bg-black/50"></div>
+   <div className="absolute inset-0 bg-black/20"></div>
 
   <div className="container mx-auto px-4 pt-12 sm:pt-16 md:pt-20 lg:pt-24 relative z-10">
     <div className="max-w-4xl mx-auto text-center text-white">

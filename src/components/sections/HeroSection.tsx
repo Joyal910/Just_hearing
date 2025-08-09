@@ -56,7 +56,7 @@ export function HeroSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000) // Reduced from 8000ms to 5000ms
+    }, 8000) // Increased from 5000ms to 12000ms (12 seconds) for better readability
     return () => clearInterval(timer)
   }, [])
 
@@ -111,7 +111,7 @@ export function HeroSection() {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
@@ -136,7 +136,7 @@ export function HeroSection() {
               {slides.map((slide, index) => (
                 <div
                   key={index}
-                  className={`transition-all duration-500 ease-in-out transform ${
+                  className={`transition-all duration-800 ease-in-out transform ${
                     index === currentSlide 
                       ? 'opacity-100 translate-x-0 scale-100 relative z-10' 
                       : 'opacity-0 translate-x-4 scale-95 absolute inset-0 z-0 pointer-events-none'
@@ -199,6 +199,23 @@ export function HeroSection() {
       >
         <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6 text-white group-hover:scale-110 transition-transform duration-200" />
       </button>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-110 ${
+              index === currentSlide 
+                ? 'bg-white shadow-lg' 
+                : 'bg-white/40 hover:bg-white/60'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+            type="button"
+          />
+        ))}
+      </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-2 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-20 animate-bounce cursor-pointer hover:scale-110 transition-transform duration-200">

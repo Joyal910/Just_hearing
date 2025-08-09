@@ -30,7 +30,7 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
             <div className="hidden lg:flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Clock className="h-4 w-4 text-cyan-400" />
-                <span>Mon-Sat: 9:00 AM - 6:00 PM</span>
+                <span>Mon-Sat: 9:00 AM - 5:00 PM</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-cyan-400" />
@@ -195,7 +195,7 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-center space-x-2">
                       <Clock className="h-4 w-4 text-cyan-600" />
-                      <span>Mon-Sat: 9:00 AM - 6:00 PM</span>
+                      <span>Mon-Sat: 9:00 AM - 5:00 PM</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <MapPin className="h-4 w-4 text-cyan-600" />
