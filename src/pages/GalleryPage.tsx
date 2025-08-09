@@ -7,6 +7,15 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { X, ZoomIn, ChevronLeft, ChevronRight, Play, Award, Users, Heart, ArrowRight, Phone, Calendar } from "lucide-react"
 import banner from "../assets/banner/about us.jpg"
+import gallery1 from "../assets/gallery/gallery1.jpeg"
+import gallery2 from "../assets/gallery/gallery2.jpeg"
+import gallery3 from "../assets/gallery/gallery3.jpeg"
+import gallery4 from "../assets/gallery/gallery4.jpeg"
+import gallery5 from "../assets/gallery/gallery5.jpeg"
+import gallery6 from "../assets/gallery/gallery6.jpeg"
+import gallery7 from "../assets/gallery/gallery7.jpeg"
+
+
 
 
 export function GalleryPage() {
@@ -35,87 +44,50 @@ export function GalleryPage() {
   const galleryImages = [
     {
       id: 1,
-      src: "https://images.pexels.com/photos/5214420/pexels-photo-5214420.jpeg?auto=compress&cs=tinysrgb&w=800",
+      src : gallery7,
       title: "Advanced Audiometry Testing",
       category: "equipment",
       description: "State-of-the-art audiometry equipment for precise hearing assessments"
     },
     {
       id: 2,
-      src: "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800",
+src : gallery3,
       title: "Patient Consultation",
       category: "consultation",
       description: "Personalized consultation with our expert audiologists"
     },
     {
       id: 3,
-      src: "https://images.pexels.com/photos/6303655/pexels-photo-6303655.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Pediatric Hearing Care",
+src : gallery5,
+
+title: "Pediatric Hearing Care",
       category: "pediatric",
       description: "Specialized hearing care for children in a comfortable environment"
     },
     {
       id: 4,
-      src: "https://images.pexels.com/photos/7659564/pexels-photo-7659564.jpeg?auto=compress&cs=tinysrgb&w=800",
+src : gallery4,
       title: "Premium Hearing Aids",
       category: "equipment",
       description: "Latest generation hearing aids with advanced technology"
     },
     {
       id: 5,
-      src: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Tinnitus Treatment Session",
+src : gallery6,      title: "Tinnitus Treatment Session",
       category: "treatment",
       description: "Comprehensive tinnitus evaluation and treatment"
     },
     {
       id: 6,
-      src: "https://images.pexels.com/photos/5214413/pexels-photo-5214413.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Hearing Aid Fitting",
+src : gallery1,      title: "Hearing Aid Fitting",
       category: "consultation",
       description: "Professional hearing aid fitting and adjustment"
     },
     {
       id: 7,
-      src: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Expert Audiologist",
+src : gallery2,      title: "Expert Audiologist",
       category: "team",
       description: "Our experienced team of certified audiologists"
-    },
-    {
-      id: 8,
-      src: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Modern Clinic Interior",
-      category: "facility",
-      description: "Clean, modern, and comfortable clinic environment"
-    },
-    {
-      id: 9,
-      src: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Patient Success Story",
-      category: "testimonial",
-      description: "Happy patient sharing their hearing improvement journey"
-    },
-    {
-      id: 10,
-      src: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Family Consultation",
-      category: "consultation",
-      description: "Family-centered approach to hearing healthcare"
-    },
-    {
-      id: 11,
-      src: "https://images.pexels.com/photos/1130623/pexels-photo-1130623.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Patient Care Excellence",
-      category: "testimonial",
-      description: "Dedicated to providing exceptional patient care"
-    },
-    {
-      id: 12,
-      src: "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Clinic Reception Area",
-      category: "facility",
-      description: "Welcoming reception area for patient comfort"
     }
   ]
 
@@ -219,7 +191,7 @@ export function GalleryPage() {
                 />
                 
                 {/* Modern Gradient Overlay */}
-                  <div className="absolute inset-0 bg-black/50"></div>
+                  <div className="absolute inset-0 bg-black/20"></div>
                 
                 {/* Zoom Icon */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-75 group-hover:scale-100">
