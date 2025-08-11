@@ -41,7 +41,8 @@ export default function BookAppointmentSection() {
     "Pediatric Hearing Test",
     "Tinnitus Retraining Evaluation",
     "Hearing Aid Repair",
-    "Follow-up Appointment"
+    "Follow-up Appointment",
+    "Home Visit"
   ]
 
   const timeSlots = [
