@@ -29,7 +29,7 @@ export function HeroSection() {
       title: "Rediscover Life's Beautiful",
       highlight: "Sounds",
       subtitle: "Kottayam's Leading Hearing Care Center – Bringing Advanced Technology and Compassionate Expertise Right to Your Home.",
-      ctaText: "Schedule Your FREE Trial",
+      ctaText: "Schedule Your FREE Hearing Assessment",
       ctaLink: "#booking", // Link to booking section on same page
       ctaType: "anchor"
     },
