@@ -103,14 +103,14 @@ export function Footer() {
           <p className={`text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto transform transition-all duration-1000 delay-300 ${
             visibleSections.has('cta') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            Schedule your free consultation today and take the first step towards better hearing
+            Schedule your free trial today and take the first step towards better hearing
           </p>
           <div className={`flex flex-col sm:flex-row gap-4 justify-center transform transition-all duration-1000 delay-500 ${
             visibleSections.has('cta') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             <Link to="/?scroll=booking" className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white px-6 sm:px-8 py-4 text-base sm:text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 group w-full sm:w-auto inline-flex items-center justify-center">
               <Calendar className="w-5 h-5 mr-2" />
-              Schedule Free Consultation
+              Schedule Free trial
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
 

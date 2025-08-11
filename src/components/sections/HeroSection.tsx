@@ -28,8 +28,8 @@ export function HeroSection() {
       image: "https://images.squarespace-cdn.com/content/v1/63cfd8ca14f6e861bd2a47bc/513df17e-34f9-470c-8d2d-3a7d024ac4ab/childrens-hearing-aids-newbury-thatcham.jpg",
       title: "Rediscover Life's Beautiful",
       highlight: "Sounds",
-      subtitle: "Kottayam's Leading Hearing Care Center, Combining Advanced Technology with Compassionate Expertise.",
-      ctaText: "Schedule Your FREE Hearing Assessment",
+      subtitle: "Kottayam's Leading Hearing Care Center – Bringing Advanced Technology and Compassionate Expertise Right to Your Home.",
+      ctaText: "Schedule Your FREE Trial",
       ctaLink: "#booking", // Link to booking section on same page
       ctaType: "anchor"
     },
@@ -38,7 +38,7 @@ export function HeroSection() {
       title: "Award-Winning",
       highlight: "Excellence",
       subtitle: "Just Hearing is recognized for award-winning excellence in hearing tests, accurate diagnostics, and exceptional patient care.",
-      ctaText: "Learn About Our Awards",
+      ctaText: "Learn About Us",
       ctaLink: "#/about", // Link to about page
       ctaType: "hash-route" // hash-based routing
     },

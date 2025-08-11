@@ -176,7 +176,7 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
                 Contact
               </Link>
               <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 lg:px-6 py-2 text-sm lg:text-base rounded-full">
-                <Link to="/?scroll=booking">Free Appointment</Link>     
+                <Link to="/?scroll=booking">Book Appointment</Link>     
               </Button>
             </nav>
 
@@ -296,7 +296,7 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
                     Contact
                   </Link>
                   <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold w-full rounded-full py-3 text-base touch-target">
-                    <Link to="/?scroll=booking">Free Appointment</Link> 
+                    <Link to="/?scroll=booking">Book Appointment</Link> 
                   </Button>
                 </nav>
               </div>
