@@ -185,7 +185,7 @@ export function AboutPage() {
         </div>
         <div className="absolute inset-0 bg-black/20"></div>
         
-        <div className="container mx-auto px-2 sm:px-4 pt-16 sm:pt-24 relative z-10">
+        <div className="container mx-auto px-2 sm:px-4 pt-12 sm:pt-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 animate-fade-in-up">
               About{' '}

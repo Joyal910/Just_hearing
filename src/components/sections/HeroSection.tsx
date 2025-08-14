@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react"
+import { CheckCircle, ChevronLeft, ChevronRight, Home } from "lucide-react"
 import { useState, useEffect } from "react"
 import heroimage1 from "../../assets/images/heroimage1.jpeg"
 
@@ -10,7 +10,7 @@ export function HeroSection() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoaded(true)
-    }, 100) // Small delay to ensure smooth animation start
+    }, 100)
     return () => clearTimeout(timer)
   }, [])
   
@@ -21,8 +21,8 @@ export function HeroSection() {
       highlight: "Technology",
       subtitle: "Discover cutting-edge hearing aid technology with our advanced devices, engineered for exceptional sound clarity and all-day comfort.",
       ctaText: "Explore Our Technology",
-      ctaLink: "#/products", // Link to technology/products page
-      ctaType: "hash-route" // hash-based routing
+      ctaLink: "#/products",
+      ctaType: "hash-route"
     },
     {
       image: "https://images.squarespace-cdn.com/content/v1/63cfd8ca14f6e861bd2a47bc/513df17e-34f9-470c-8d2d-3a7d024ac4ab/childrens-hearing-aids-newbury-thatcham.jpg",
@@ -30,7 +30,7 @@ export function HeroSection() {
       highlight: "Sounds",
       subtitle: "Kottayam's Leading Hearing Care Center – Bringing Advanced Technology and Compassionate Expertise Right to Your Home.",
       ctaText: "Schedule Your Hearing Assessment",
-      ctaLink: "#booking", // Link to booking section on same page
+      ctaLink: "#booking",
       ctaType: "anchor"
     },
     {
@@ -39,8 +39,8 @@ export function HeroSection() {
       highlight: "Excellence",
       subtitle: "Just Hearing is recognized for award-winning excellence in hearing tests, accurate diagnostics, and exceptional patient care.",
       ctaText: "Learn About Us",
-      ctaLink: "#/about", // Link to about page
-      ctaType: "hash-route" // hash-based routing
+      ctaLink: "#/about",
+      ctaType: "hash-route"
     },
     {
       image: "https://thailaitrust.com/wp-content/uploads/2023/08/hearing-aid.jpg",
@@ -48,7 +48,7 @@ export function HeroSection() {
       highlight: "Support",
       subtitle: "Our experienced audiologists offer comprehensive hearing evaluations and personalized treatment plans tailored to your individual needs.",
       ctaText: "Meet Our Specialists",
-      ctaLink: "#team", // Link to team section on same page
+      ctaLink: "#team",
       ctaType: "anchor"
     }
   ]
@@ -56,7 +56,7 @@ export function HeroSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 8000) // Increased from 5000ms to 12000ms (12 seconds) for better readability
+    }, 8000)
     return () => clearInterval(timer)
   }, [])
 
@@ -68,23 +68,20 @@ export function HeroSection() {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
   }
 
-  // Function to handle CTA button click based on slide
   const handleCtaClick = (e, slide) => {
     e.preventDefault()
     e.stopPropagation()
     
-    console.log('CTA clicked:', slide.ctaText, slide.ctaType, slide.ctaLink) // Debug log
+    console.log('CTA clicked:', slide.ctaText, slide.ctaType, slide.ctaLink)
     
     if (slide.ctaType === 'external') {
       window.open(slide.ctaLink, '_blank')
     } else if (slide.ctaType === 'phone') {
       window.location.href = slide.ctaLink
     } else if (slide.ctaType === 'hash-route') {
-      // Hash-based routing (like #/products, #/about)
-      console.log('Navigating to hash route:', slide.ctaLink) // Debug log
+      console.log('Navigating to hash route:', slide.ctaLink)
       window.location.hash = slide.ctaLink.startsWith('#') ? slide.ctaLink.substring(1) : slide.ctaLink
     } else if (slide.ctaType === 'anchor') {
-      // Internal anchor link - smooth scroll to section on same page
       const element = document.querySelector(slide.ctaLink)
       if (element) {
         element.scrollIntoView({ 
@@ -100,7 +97,7 @@ export function HeroSection() {
   const handlePhoneClick = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    console.log('Phone button clicked') // Debug log
+    console.log('Phone button clicked')
     window.location.href = 'tel:+918590310265'
   }
 
@@ -142,7 +139,7 @@ export function HeroSection() {
                       : 'opacity-0 translate-x-4 scale-95 absolute inset-0 z-0 pointer-events-none'
                   }`}
                 >
-                  <div className="space-y-5 sm:space-y-8">
+                  <div className="space-y-5 sm:space-y-8 relative">
                     <div className="space-y-2 sm:space-y-4">
                       <h1 className="text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up mobile-large-heading-scale">
                         {slide.title}
@@ -173,6 +170,18 @@ export function HeroSection() {
                         Call Now: +91-8590310265
                       </Button>
                     </div>
+                    {/* Absolute positioned Home Visit Available below buttons */}
+                    <div className={`absolute left-0 top-full mt-4 transform transition-all duration-500 ease-out ${
+                      isLoaded ? 'translate-x-0 opacity-100' : 'translate-x-6 opacity-0'
+                    }`}>
+                      <div className="bg-[#01184b] text-white px-3 py-2 sm:px-4 sm:py-3 rounded-full shadow-lg backdrop-blur-sm border border-white/20 animate-pulse-gentle inline-flex items-center gap-2">
+                        <Home className="h-4 w-4 sm:h-5 sm:w-5" />
+                        <span className="text-xs sm:text-sm font-semibold whitespace-nowrap">
+                          Home Visit Available
+                        </span>
+                        <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-white animate-bounce-gentle" />
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -181,7 +190,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Navigation Arrows - Hidden on mobile (sm and below), visible on desktop */}
+      {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
         className="hidden sm:block absolute left-1 sm:left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 sm:p-4 transition-all duration-200 hover:scale-110 hover:-translate-x-1 group touch-target cursor-pointer"
@@ -217,7 +226,7 @@ export function HeroSection() {
         ))}
       </div>
 
-      {/* Scroll Indicator - Hidden on mobile (sm and below), visible on desktop */}
+      {/* Scroll Indicator */}
       <div className="hidden sm:block absolute bottom-2 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-20 animate-bounce cursor-pointer hover:scale-110 transition-transform duration-200">
         <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/50 rounded-full flex justify-center hover:border-white/80 transition-colors duration-200">
           <div className="w-1 h-2 sm:h-3 bg-white rounded-full mt-2 animate-pulse"></div>
@@ -240,12 +249,26 @@ export function HeroSection() {
             transform: translateY(0);
           }
         }
+        @keyframes pulse-gentle {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.8; }
+        }
+        @keyframes bounce-gentle {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-2px); }
+        }
         .animate-gradient-x {
           background-size: 200% 200%;
           animation: gradient-x 2s ease infinite;
         }
         .animate-fade-in-up {
           animation: fade-in-up 0.25s ease-out;
+        }
+        .animate-pulse-gentle {
+          animation: pulse-gentle 3s ease-in-out infinite;
+        }
+        .animate-bounce-gentle {
+          animation: bounce-gentle 2s ease-in-out infinite;
         }
       `}</style>
     </section>
