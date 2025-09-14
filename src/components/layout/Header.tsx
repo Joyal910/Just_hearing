@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Phone, Award, Clock, MapPin, Menu, X, Ear, Instagram, Youtube } from "lucide-react"
 import logo from "../../assets/faivon/logo.png"
+import bni from "../../assets/faivon/bni_logo.png"
 
 interface HeaderProps {
   isScrolled: boolean
@@ -15,81 +16,91 @@ export function Header({ isScrolled, isMenuOpen, setIsMenuOpen }: HeaderProps) {
 
   return (
     <>
-      {/* Utility Bar */}
       <div className="text-white py-2 text-xs sm:text-sm" style={{ backgroundColor: '#01174a' }}>
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            {/* Location */}
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between relative">
+          {/* Left Side - Location */}
+          <div className="flex items-center space-x-1 sm:space-x-2 flex-1">
+            <MapPin className="h-4 w-4 text-cyan-400" />
+            <span className="hidden sm:inline">Puthupally, Kottayam, Kerala</span>
+            <span className="sm:hidden">Kottayam, Kerala</span>
+          </div>
+
+          {/* Center Logo */}
+          <div className="absolute left-1/2 transform -translate-x-1/2">
+            <img 
+              src={bni}
+              alt="bni" 
+              className="h-6 w-auto object-contain"
+            />
+            {/* Alternative: If you want to use text logo instead */}
+            {/* <div className="text-cyan-400 font-bold text-sm">LOGO</div> */}
+          </div>
+
+          {/* Right Side - Working Hours, Phone & Social Media */}
+          <div className="hidden lg:flex items-center space-x-6 flex-1 justify-end">
+            <div className="flex items-center space-x-2">
+              <Clock className="h-4 w-4 text-cyan-400" />
+              <span>Mon-Sat: 9:00 AM - 5:00 PM</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Phone className="h-4 w-4 text-cyan-400" />
+              <span>+91-8590310265</span>
+            </div>
+            {/* Social Media Icons */}
+            <div className="flex items-center space-x-3">
+              <a 
+                href="https://www.instagram.com/justhearing.info?igsh=ZTlmY256MHhzNmNt" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-white transition-colors"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a 
+                href="https://www.youtube.com/@justhearing" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-white transition-colors"
+                aria-label="Subscribe to our YouTube channel"
+              >
+                <Youtube className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Mobile & Tablet - Phone and Social Icons */}
+          <div className="lg:hidden flex items-center space-x-3 flex-1 justify-end">
             <div className="flex items-center space-x-1 sm:space-x-2">
-              <MapPin className="h-4 w-4 text-cyan-400" />
-              <span className="hidden sm:inline">Puthupally, Kottayam, Kerala</span>
-              <span className="sm:hidden">Kottayam, Kerala</span>
+              <Phone className="h-4 w-4 text-cyan-400" />
+              <span className="text-xs sm:text-sm">+91-8590310265</span>
             </div>
-
-            {/* Working Hours, Phone & Social Media */}
-            <div className="hidden lg:flex items-center space-x-6">
-              <div className="flex items-center space-x-2">
-                <Clock className="h-4 w-4 text-cyan-400" />
-                <span>Mon-Sat: 9:00 AM - 5:00 PM</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-cyan-400" />
-                <span>+91-8590310265</span>
-              </div>
-              {/* Social Media Icons */}
-              <div className="flex items-center space-x-3">
-                <a 
-                  href="https://www.instagram.com/justhearing.info?igsh=ZTlmY256MHhzNmNt" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-white transition-colors"
-                  aria-label="Follow us on Instagram"
-                >
-                  <Instagram className="h-4 w-4" />
-                </a>
-                <a 
-                  href="https://www.youtube.com/@justhearing" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-white transition-colors"
-                  aria-label="Subscribe to our YouTube channel"
-                >
-                  <Youtube className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-
-            {/* Mobile & Tablet - Phone and Social Icons */}
-            <div className="lg:hidden flex items-center space-x-3">
-              <div className="flex items-center space-x-1 sm:space-x-2">
-                <Phone className="h-4 w-4 text-cyan-400" />
-                <span className="text-xs sm:text-sm">+91-8590310265</span>
-              </div>
-              {/* Mobile Social Media Icons */}
-              <div className="flex items-center space-x-2">
-                <a 
-                 href="https://www.instagram.com/justhearing.info?igsh=ZTlmY256MHhzNmNt"
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-white transition-colors"
-                  aria-label="Follow us on Instagram"
-                >
-                  <Instagram className="h-4 w-4" />
-                </a>
-                <a 
-                   href="https://www.youtube.com/@justhearing" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-white transition-colors"
-                  aria-label="Subscribe to our YouTube channel"
-                >
-                  <Youtube className="h-4 w-4" />
-                </a>
-              </div>
+            {/* Mobile Social Media Icons */}
+            <div className="flex items-center space-x-2">
+              <a 
+                href="https://www.instagram.com/justhearing.info?igsh=ZTlmY256MHhzNmNt"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-white transition-colors"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a 
+                href="https://www.youtube.com/@justhearing" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-white transition-colors"
+                aria-label="Subscribe to our YouTube channel"
+              >
+                <Youtube className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
       {/* Navigation Header - Pill Shaped Floating & Sticky */}
       <header className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
